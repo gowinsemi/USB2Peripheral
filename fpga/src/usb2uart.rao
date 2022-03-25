@@ -1,0 +1,681 @@
+<?xml version="1" encoding="UTF-8"?>
+<GAO_CONFIG>
+    <Version>3.0</Version>
+    <Mode>Standard</Mode>
+    <AoCore index="0" sample_clock="u_usb_i2c_ctrl/clk_i" trig_type="0" storage_depth="512" window_num="1" capture_amount="512" trigger_pos="100">
+        <SignalList>
+            <Bus name="u_usb_i2c_ctrl/usb_endpt_i[3:0]">
+                <Signal>u_usb_i2c_ctrl/usb_endpt_i[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_endpt_i[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_endpt_i[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_endpt_i[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/usb_rxdat_i[7:0]">
+                <Signal>u_usb_i2c_ctrl/usb_rxdat_i[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_rxdat_i[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_rxdat_i[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_rxdat_i[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_rxdat_i[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_rxdat_i[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_rxdat_i[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_rxdat_i[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c_paddr[5:2]">
+                <Signal>u_usb_i2c_ctrl/i2c_paddr[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_paddr[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_paddr[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_paddr[2]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c_pwdata[31:0]">
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[31]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[30]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[29]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[28]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[27]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[26]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[25]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[24]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[23]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[22]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[21]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[20]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[19]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[18]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[17]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[16]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[15]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[14]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[13]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[12]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[11]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[10]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[9]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[8]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_pwdata[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c_psel[3:0]">
+                <Signal>u_usb_i2c_ctrl/i2c_psel[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_psel[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_psel[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c_psel[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/state_i2c_ctrl[2:0]">
+                <Signal>u_usb_i2c_ctrl/state_i2c_ctrl[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/state_i2c_ctrl[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/state_i2c_ctrl[0]</Signal>
+            </Bus>
+            <Signal>u_usb_i2c_ctrl/usb_rxval_i</Signal>
+            <Signal>u_usb_i2c_ctrl/usb_rxact_i</Signal>
+            <Signal>u_usb_i2c_ctrl/usb_rxpktval_i</Signal>
+            <Signal>u_usb_i2c_ctrl/usb_txact_i</Signal>
+            <Signal>u_usb_i2c_ctrl/usb_txpop_i</Signal>
+            <Signal>u_usb_i2c_ctrl/i2c_penable</Signal>
+            <Signal>u_usb_i2c_ctrl/i2c_pwrite</Signal>
+            <Signal>u_usb_i2c_ctrl/iic_sel</Signal>
+            <Signal>u_usb_i2c_ctrl/cfg_sel</Signal>
+            <Signal>u_usb_i2c_ctrl/data_rd_sel</Signal>
+            <Bus name="u_usb_i2c_ctrl/fifo_sc_i2c_rx_q[7:0]">
+                <Signal>u_usb_i2c_ctrl/fifo_sc_i2c_rx_q[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/fifo_sc_i2c_rx_q[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/fifo_sc_i2c_rx_q[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/fifo_sc_i2c_rx_q[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/fifo_sc_i2c_rx_q[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/fifo_sc_i2c_rx_q[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/fifo_sc_i2c_rx_q[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/fifo_sc_i2c_rx_q[0]</Signal>
+            </Bus>
+            <Signal>u_usb_i2c_ctrl/fifo_sc_i2c_rx_wren</Signal>
+            <Signal>u_usb_i2c_ctrl/fifo_sc_i2c_rx_rden</Signal>
+            <Signal>u_usb_i2c_ctrl/fifo_sc_i2c_rx_empty</Signal>
+            <Bus name="u_usb_i2c_ctrl/usb_txdat_i2c1_o[7:0]">
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c1_o[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c1_o[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c1_o[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c1_o[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c1_o[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c1_o[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c1_o[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c1_o[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/usb_txdat_i2c2_o[7:0]">
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c2_o[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c2_o[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c2_o[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c2_o[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c2_o[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c2_o[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c2_o[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c2_o[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/usb_txdat_i2c3_o[7:0]">
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c3_o[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c3_o[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c3_o[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c3_o[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c3_o[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c3_o[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c3_o[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c3_o[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/usb_txdat_i2c4_o[7:0]">
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c4_o[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c4_o[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c4_o[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c4_o[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c4_o[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c4_o[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c4_o[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c4_o[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/usb_txdat_len_i2c1_o[11:0]">
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c1_o[11]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c1_o[10]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c1_o[9]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c1_o[8]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c1_o[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c1_o[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c1_o[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c1_o[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c1_o[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c1_o[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c1_o[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c1_o[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/usb_txdat_len_i2c2_o[11:0]">
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c2_o[11]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c2_o[10]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c2_o[9]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c2_o[8]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c2_o[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c2_o[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c2_o[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c2_o[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c2_o[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c2_o[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c2_o[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c2_o[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/usb_txdat_len_i2c3_o[11:0]">
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c3_o[11]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c3_o[10]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c3_o[9]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c3_o[8]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c3_o[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c3_o[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c3_o[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c3_o[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c3_o[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c3_o[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c3_o[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c3_o[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/usb_txdat_len_i2c4_o[11:0]">
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c4_o[11]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c4_o[10]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c4_o[9]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c4_o[8]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c4_o[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c4_o[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c4_o[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c4_o[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c4_o[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c4_o[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c4_o[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_len_i2c4_o[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c1_prdata[31:0]">
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[31]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[30]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[29]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[28]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[27]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[26]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[25]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[24]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[23]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[22]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[21]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[20]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[19]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[18]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[17]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[16]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[15]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[14]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[13]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[12]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[11]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[10]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[9]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[8]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c2_prdata[31:0]">
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[31]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[30]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[29]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[28]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[27]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[26]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[25]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[24]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[23]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[22]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[21]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[20]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[19]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[18]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[17]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[16]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[15]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[14]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[13]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[12]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[11]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[10]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[9]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[8]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c3_prdata[31:0]">
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[31]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[30]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[29]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[28]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[27]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[26]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[25]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[24]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[23]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[22]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[21]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[20]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[19]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[18]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[17]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[16]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[15]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[14]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[13]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[12]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[11]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[10]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[9]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[8]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c4_prdata[31:0]">
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[31]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[30]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[29]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[28]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[27]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[26]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[25]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[24]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[23]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[22]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[21]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[20]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[19]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[18]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[17]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[16]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[15]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[14]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[13]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[12]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[11]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[10]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[9]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[8]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c1_rx_data[7:0]">
+                <Signal>u_usb_i2c_ctrl/i2c1_rx_data[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_rx_data[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_rx_data[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_rx_data[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_rx_data[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_rx_data[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_rx_data[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_rx_data[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c1_rx_len[7:0]">
+                <Signal>u_usb_i2c_ctrl/i2c1_rx_len[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_rx_len[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_rx_len[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_rx_len[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_rx_len[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_rx_len[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_rx_len[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_rx_len[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c2_rx_data[7:0]">
+                <Signal>u_usb_i2c_ctrl/i2c2_rx_data[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_rx_data[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_rx_data[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_rx_data[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_rx_data[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_rx_data[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_rx_data[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_rx_data[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c2_rx_len[7:0]">
+                <Signal>u_usb_i2c_ctrl/i2c2_rx_len[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_rx_len[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_rx_len[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_rx_len[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_rx_len[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_rx_len[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_rx_len[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_rx_len[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c3_rx_data[7:0]">
+                <Signal>u_usb_i2c_ctrl/i2c3_rx_data[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_rx_data[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_rx_data[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_rx_data[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_rx_data[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_rx_data[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_rx_data[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_rx_data[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c3_rx_len[7:0]">
+                <Signal>u_usb_i2c_ctrl/i2c3_rx_len[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_rx_len[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_rx_len[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_rx_len[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_rx_len[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_rx_len[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_rx_len[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_rx_len[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c4_rx_data[7:0]">
+                <Signal>u_usb_i2c_ctrl/i2c4_rx_data[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_rx_data[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_rx_data[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_rx_data[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_rx_data[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_rx_data[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_rx_data[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_rx_data[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c4_rx_len[7:0]">
+                <Signal>u_usb_i2c_ctrl/i2c4_rx_len[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_rx_len[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_rx_len[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_rx_len[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_rx_len[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_rx_len[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_rx_len[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_rx_len[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/usb_tx_len_i2c1[11:0]">
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c1[11]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c1[10]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c1[9]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c1[8]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c1[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c1[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c1[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c1[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c1[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c1[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c1[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c1[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/usb_tx_len_i2c2[11:0]">
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c2[11]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c2[10]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c2[9]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c2[8]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c2[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c2[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c2[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c2[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c2[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c2[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c2[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c2[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/usb_tx_len_i2c3[11:0]">
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c3[11]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c3[10]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c3[9]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c3[8]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c3[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c3[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c3[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c3[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c3[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c3[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c3[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c3[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/usb_tx_len_i2c4[11:0]">
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c4[11]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c4[10]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c4[9]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c4[8]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c4[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c4[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c4[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c4[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c4[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c4[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c4[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_tx_len_i2c4[0]</Signal>
+            </Bus>
+            <Signal>u_usb_i2c_ctrl/usb_rxrdy_i2c1_o</Signal>
+            <Signal>u_usb_i2c_ctrl/usb_rxrdy_i2c2_o</Signal>
+            <Signal>u_usb_i2c_ctrl/usb_rxrdy_i2c3_o</Signal>
+            <Signal>u_usb_i2c_ctrl/usb_rxrdy_i2c4_o</Signal>
+            <Signal>u_usb_i2c_ctrl/i2c1_rd</Signal>
+            <Signal>u_usb_i2c_ctrl/i2c2_rd</Signal>
+            <Signal>u_usb_i2c_ctrl/i2c3_rd</Signal>
+            <Signal>u_usb_i2c_ctrl/i2c4_rd</Signal>
+            <Bus name="u_usb_i2c_ctrl/usb_txdat_i2c3_o[7:0]">
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c3_o[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c3_o[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c3_o[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c3_o[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c3_o[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c3_o[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c3_o[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/usb_txdat_i2c3_o[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c1_prdata[31:0]">
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[31]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[30]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[29]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[28]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[27]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[26]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[25]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[24]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[23]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[22]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[21]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[20]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[19]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[18]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[17]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[16]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[15]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[14]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[13]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[12]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[11]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[10]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[9]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[8]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c1_prdata[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c2_prdata[31:0]">
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[31]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[30]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[29]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[28]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[27]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[26]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[25]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[24]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[23]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[22]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[21]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[20]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[19]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[18]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[17]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[16]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[15]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[14]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[13]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[12]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[11]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[10]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[9]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[8]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c2_prdata[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c3_prdata[31:0]">
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[31]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[30]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[29]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[28]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[27]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[26]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[25]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[24]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[23]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[22]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[21]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[20]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[19]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[18]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[17]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[16]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[15]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[14]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[13]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[12]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[11]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[10]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[9]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[8]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c3_prdata[0]</Signal>
+            </Bus>
+            <Bus name="u_usb_i2c_ctrl/i2c4_prdata[31:0]">
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[31]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[30]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[29]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[28]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[27]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[26]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[25]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[24]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[23]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[22]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[21]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[20]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[19]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[18]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[17]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[16]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[15]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[14]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[13]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[12]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[11]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[10]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[9]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[8]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[7]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[6]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[5]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[4]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[3]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[2]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[1]</Signal>
+                <Signal>u_usb_i2c_ctrl/i2c4_prdata[0]</Signal>
+            </Bus>
+        </SignalList>
+        <Triggers>
+            <Trigger index="0">
+                <SignalList>
+                    <Signal>u_usb_i2c_ctrl/usb_rxact_i</Signal>
+                </SignalList>
+            </Trigger>
+            <Trigger index="1">
+                <SignalList>
+                    <Signal>u_usb_i2c_ctrl/usb_txact_i</Signal>
+                </SignalList>
+            </Trigger>
+            <Trigger index="2">
+                <SignalList>
+                    <Bus restorename="u_usb_i2c_ctrl/state_i2c_ctrl[2:0]">
+                        <Signal>u_usb_i2c_ctrl/state_i2c_ctrl[2]</Signal>
+                        <Signal>u_usb_i2c_ctrl/state_i2c_ctrl[1]</Signal>
+                        <Signal>u_usb_i2c_ctrl/state_i2c_ctrl[0]</Signal>
+                    </Bus>
+                </SignalList>
+            </Trigger>
+            <Trigger index="3">
+                <SignalList>
+                    <Signal>u_usb_i2c_ctrl/iic_data_sel</Signal>
+                </SignalList>
+            </Trigger>
+            <Trigger index="4"/>
+            <Trigger index="5"/>
+            <Trigger index="6"/>
+            <Trigger index="7"/>
+            <Trigger index="8"/>
+            <Trigger index="9"/>
+            <Trigger index="10"/>
+            <Trigger index="11"/>
+            <Trigger index="12"/>
+            <Trigger index="13"/>
+            <Trigger index="14"/>
+            <Trigger index="15"/>
+        </Triggers>
+        <MatchUnits>
+            <MatchUnit index="0" enabled="1" match_type="1" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="1" value1="0" trigger="0"/>
+            <MatchUnit index="1" enabled="1" match_type="1" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="0" value1="0" trigger="1"/>
+            <MatchUnit index="2" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="010" value1="000" trigger="2"/>
+            <MatchUnit index="3" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="1" value1="0" trigger="3"/>
+            <MatchUnit index="4" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="5" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="6" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="7" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="8" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="9" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="10" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="11" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="12" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="13" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="14" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="15" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+        </MatchUnits>
+        <Expressions type="Static">
+            <Expression>M0&amp;M1</Expression>
+        </Expressions>
+    </AoCore>
+    <GAO_ID>1010111001111011</GAO_ID>
+</GAO_CONFIG>

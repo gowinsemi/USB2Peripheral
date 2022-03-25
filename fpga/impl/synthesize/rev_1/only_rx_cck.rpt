@@ -1,0 +1,118 @@
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03G-Beta1
+Install: C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro
+OS: Windows 6.1
+
+Hostname: GW-SW-049
+
+Implementation : rev_1
+
+# Written on Wed Jun 10 14:57:02 2020
+
+##### DESIGN INFO #######################################################
+
+Top View:                "USB_TOP"
+Constraint File(s):      (none)
+
+
+
+
+##### SUMMARY ############################################################
+
+Found 0 issues in 0 out of 0 constraints
+
+
+##### DETAILS ############################################################
+
+
+
+Clock Relationships
+*******************
+
+Starting                                                                Ending                                                                  |     rise to rise     |     fall to fall     |     rise to fall     |     fall to rise                     
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+System                                                                  _~usb_1p1_USB_TOP__2235_10182_256_10s_10s|PHY_CLKOUT_inferred_clock     |     11.819           |     No paths         |     No paths         |     No paths                         
+_~usb_1p1_USB_TOP__2235_10182_256_10s_10s|PHY_CLKOUT_inferred_clock     System                                                                  |     11.819           |     No paths         |     No paths         |     No paths                         
+_~usb_1p1_USB_TOP__2235_10182_256_10s_10s|PHY_CLKOUT_inferred_clock     _~usb_1p1_USB_TOP__2235_10182_256_10s_10s|PHY_CLKOUT_inferred_clock     |     11.819           |     No paths         |     No paths         |     No paths                         
+===========================================================================================================================================================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+Unconstrained Start/End Points
+******************************
+
+p:bck_O
+p:iis_1_O
+p:lrck_O
+p:usb_rxdat[0]
+p:usb_rxdat[1]
+p:usb_rxdat[2]
+p:usb_rxdat[3]
+p:usb_rxdat[4]
+p:usb_rxdat[5]
+p:usb_rxdat[6]
+p:usb_rxdat[7]
+p:usb_rxlen[0]
+p:usb_rxlen[1]
+p:usb_rxlen[2]
+p:usb_rxlen[3]
+p:usb_rxlen[4]
+p:usb_rxlen[5]
+p:usb_rxlen[6]
+p:usb_rxlen[7]
+p:usb_rxlen[8]
+p:usb_rxlen[9]
+p:usb_rxrdy
+p:usb_rxval
+p:usb_txdat[0]
+p:usb_txdat[1]
+p:usb_txdat[2]
+p:usb_txdat[3]
+p:usb_txdat[4]
+p:usb_txdat[5]
+p:usb_txdat[6]
+p:usb_txdat[7]
+p:usb_txrdy
+p:usb_txroom[0]
+p:usb_txroom[1]
+p:usb_txroom[2]
+p:usb_txroom[3]
+p:usb_txroom[4]
+p:usb_txroom[5]
+p:usb_txroom[6]
+p:usb_txroom[7]
+p:usb_txroom[8]
+p:usb_txroom[9]
+p:usb_txval
+
+
+Inapplicable constraints
+************************
+
+(none)
+
+
+Applicable constraints with issues
+**********************************
+
+(none)
+
+
+Constraints with matching wildcard expressions
+**********************************************
+
+(none)
+
+
+Library Report
+**************
+
+
+# End of Constraint Checker Report

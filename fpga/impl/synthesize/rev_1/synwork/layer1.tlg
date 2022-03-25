@@ -1,0 +1,147 @@
+@N: Setting default value for generic vendorid to "0000100010111011";
+@N: Setting default value for generic productid to "0010011111000110";
+@N: Setting default value for generic versionbcd to "0000000100000000";
+@N: Setting default value for generic hssupport to false;
+@N: Setting default value for generic selfpowered to false;
+@N: Setting default value for generic rxbufsize_bits to 10;
+@N: Setting default value for generic txbufsize_bits to 10;
+@N: CD630 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":67:7:67:16|Synthesizing work.usb_serial.usb_serial_arch.
+@N: CD231 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":692:17:692:18|Using onehot encoding for type t_state. For example, enumeration st_idle is mapped to "10000000".
+@W: CD434 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":918:39:918:52|Signal usbi_highspeed in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD638 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":626:11:626:15|Signal rxbuf is undriven. Either assign the signal a value or remove the signal declaration.
+@N: CD630 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":99:7:99:17|Synthesizing work.usb_control.usb_control_arch.
+@N: CD231 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":222:17:222:18|Using onehot encoding for type t_state. For example, enumeration st_idle is mapped to "10000000000".
+Post processing for work.usb_control.usb_control_arch
+Running optimization stage 1 on usb_control .......
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":444:40:444:40|Pruning unused register i(31 downto 30). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":456:40:456:40|Pruning unused register i_L0(31 downto 30). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":468:40:468:40|Pruning unused register i_L1(31 downto 30). Make sure that there are no unused intermediate registers.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":233:11:233:20|Register bit s_sendbyte(1) is always 0.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":233:11:233:20|Register bit s_sendbyte(2) is always 0.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":233:11:233:20|Register bit s_sendbyte(3) is always 0.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":233:11:233:20|Register bit s_sendbyte(4) is always 0.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":233:11:233:20|Register bit s_sendbyte(5) is always 0.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":233:11:233:20|Register bit s_sendbyte(6) is always 0.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":233:11:233:20|Register bit s_sendbyte(7) is always 0.
+@W: CL279 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":233:11:233:20|Pruning register bits 7 to 1 of s_sendbyte(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@N: CD630 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":90:7:90:18|Synthesizing work.usb_transact.usb_transact_arch.
+@N: CD231 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":201:17:201:18|Using onehot encoding for type t_state. For example, enumeration st_idle is mapped to "10000000000000".
+Post processing for work.usb_transact.usb_transact_arch
+Running optimization stage 1 on usb_transact .......
+@N: CD630 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":56:7:56:16|Synthesizing work.usb_packet.usb_packet_arch.
+@N: CD231 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":116:17:116:18|Using onehot encoding for type t_state. For example, enumeration st_none is mapped to "1000000000".
+Post processing for work.usb_packet.usb_packet_arch
+Running optimization stage 1 on usb_packet .......
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":390:15:390:15|Pruning unused register i(31 downto 28). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":408:11:408:11|Pruning unused register i_L0(31 downto 28). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":219:10:219:18|Pruning unused register v_dataout(7 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":220:10:220:18|Pruning unused register v_txvalid. Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":221:10:221:18|Pruning unused register v_crc_upd. Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":222:10:222:19|Pruning unused register v_crc_data(7 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":223:17:223:26|Pruning unused register v_crc5_new(4 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":224:17:224:27|Pruning unused register v_crc16_new(15 downto 0). Make sure that there are no unused intermediate registers.
+@N: CD630 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":24:7:24:14|Synthesizing work.usb_init.usb_init_arch.
+@N: CD231 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":94:17:94:18|Using onehot encoding for type t_state. For example, enumeration st_init is mapped to "100000000".
+Post processing for work.usb_init.usb_init_arch
+Running optimization stage 1 on usb_init .......
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":136:17:136:27|Pruning unused register v_clrtimer1. Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":137:17:137:27|Pruning unused register v_clrtimer2. Make sure that there are no unused intermediate registers.
+Post processing for work.usb_serial.usb_serial_arch
+Running optimization stage 1 on work_usb_serial_usb_serial_arch_0000100010111011_0010011111000110_0000000100000000_BurrBrown from Texas Instruments_USB AUDIO    DAC_false_false_10_10_1_VENDORIDPRODUCTIDVERSIONBCDHSSUPPORTSELFPOWEREDRXBUFSIZE_BITSTXBUFSIZE_BITS .......
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":1016:17:1016:28|Pruning unused register v_max_txsize(9 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":1017:17:1017:31|Pruning unused register v_rxbuf_len_lim(9 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":1018:17:1018:32|Pruning unused register v_rxbuf_tmp_head(9 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":1019:17:1019:31|Pruning unused register v_rxbuf_pktroom. Make sure that there are no unused intermediate registers.
+@N: CL134 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":630:11:630:15|Found RAM txbuf, depth=1024, width=8
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(0) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(1) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(2) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(3) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(4) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(5) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(6) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(7) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":710:11:710:16|Register bit s_nyet is always 0.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":709:11:709:20|Register bit s_halt_out(2) is always 0.
+@W: CL260 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":709:11:709:20|Pruning register bit 2 of s_halt_out(1 to 2). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+Running optimization stage 2 on usb_init_false .......
+@N: CL201 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":97:11:97:17|Trying to extract state machine for register s_state.
+Extracted state machine for register s_state
+State machine has 4 reachable states with original encodings of:
+   000000001
+   000000010
+   000000100
+   000001000
+@W: CL249 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":97:11:97:17|Initial value is not supported on state machine s_state
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":121:11:121:18|Register bit s_chirpk is always 0.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":120:11:120:22|Register bit s_termselect is always 1.
+@W: CL190 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":119:11:119:22|Optimizing register bit s_xcvrselect to a constant 1. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":107:11:107:21|Optimizing register bit s_highspeed to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":104:11:104:20|Optimizing register bit s_chirpcnt(0) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":104:11:104:20|Optimizing register bit s_chirpcnt(1) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":104:11:104:20|Optimizing register bit s_chirpcnt(2) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":107:11:107:21|Pruning unused register s_highspeed. Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":104:11:104:20|Pruning unused register s_chirpcnt(2 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":119:11:119:22|Pruning unused register s_xcvrselect. Make sure that there are no unused intermediate registers.
+Running optimization stage 2 on usb_packet .......
+@N: CL201 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":120:11:120:17|Trying to extract state machine for register s_state.
+Extracted state machine for register s_state
+State machine has 10 reachable states with original encodings of:
+   0000000001
+   0000000010
+   0000000100
+   0000001000
+   0000010000
+   0000100000
+   0001000000
+   0010000000
+   0100000000
+   1000000000
+@W: CL249 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":120:11:120:17|Initial value is not supported on state machine s_state
+Running optimization stage 2 on usb_transact_false .......
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":222:11:222:19|Register bit s_sendpid(1) is always 1.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":215:11:215:16|Register bit s_ping is always 0.
+@W: CL260 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":222:11:222:19|Pruning register bit 1 of s_sendpid(3 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":208:11:208:17|Trying to extract state machine for register s_state.
+Extracted state machine for register s_state
+State machine has 14 reachable states with original encodings of:
+   00000000000001
+   00000000000010
+   00000000000100
+   00000000001000
+   00000000010000
+   00000000100000
+   00000001000000
+   00000010000000
+   00000100000000
+   00001000000000
+   00010000000000
+   00100000000000
+   01000000000000
+   10000000000000
+@W: CL249 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":208:11:208:17|Initial value is not supported on state machine s_state
+@N: CL159 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":133:8:133:13|Input T_NYET is unused.
+@N: CL159 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":157:8:157:18|Input I_HIGHSPEED is unused.
+Running optimization stage 2 on usb_control_2 .......
+@N: CL201 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":226:11:226:17|Trying to extract state machine for register s_state.
+@N: CL159 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":165:8:165:12|Input T_OUT is unused.
+@N: CL159 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":171:8:171:13|Input T_PING is unused.
+@N: CL159 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":192:8:192:14|Input T_OSYNC is unused.
+Running optimization stage 2 on work_usb_serial_usb_serial_arch_0000100010111011_0010011111000110_0000000100000000_BurrBrown from Texas Instruments_USB AUDIO    DAC_false_false_10_10_1_VENDORIDPRODUCTIDVERSIONBCDHSSUPPORTSELFPOWEREDRXBUFSIZE_BITSTXBUFSIZE_BITS .......
+@N: CL201 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":695:11:695:17|Trying to extract state machine for register s_state.
+Extracted state machine for register s_state
+State machine has 8 reachable states with original encodings of:
+   00000001
+   00000010
+   00000100
+   00001000
+   00010000
+   00100000
+   01000000
+   10000000
+@W: CL249 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":695:11:695:17|Initial value is not supported on state machine s_state
+
+For a summary of runtime and memory usage per design unit, please see file:
+==========================================================
+@L: E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\impl\synthesize\rev_1\synwork\layer1.rt.csv
+

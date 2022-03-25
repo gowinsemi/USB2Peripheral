@@ -1,0 +1,44 @@
+# project files
+add_file -vhdl "F:/Winson/USB/zhuzhiliang/IIS_branch/USB2IIS/only_rx/src/usb_control.vhd"
+add_file -vhdl "F:/Winson/USB/zhuzhiliang/IIS_branch/USB2IIS/only_rx/src/usb_ini.vhd"
+add_file -vhdl "F:/Winson/USB/zhuzhiliang/IIS_branch/USB2IIS/only_rx/src/usb_packet.vhd"
+add_file -vhdl "F:/Winson/USB/zhuzhiliang/IIS_branch/USB2IIS/only_rx/src/usb_pkg.vhd"
+add_file -vhdl "F:/Winson/USB/zhuzhiliang/IIS_branch/USB2IIS/only_rx/src/usb_serial.vhd"
+add_file -verilog "F:/Winson/USB/zhuzhiliang/IIS_branch/USB2IIS/only_rx/src/USB_TOP.v"
+add_file -vhdl "F:/Winson/USB/zhuzhiliang/IIS_branch/USB2IIS/only_rx/src/usb_transact.vhd"
+add_file -verilog "F:/Winson/USB/zhuzhiliang/IIS_branch/USB2IIS/only_rx/src/TOP.v"
+add_file -verilog "F:/Winson/USB/zhuzhiliang/IIS_branch/USB2IIS/only_rx/src/par2iis_ver2.v"
+add_file -verilog "F:/Winson/USB/zhuzhiliang/IIS_branch/USB2IIS/only_rx/src/serial2iis_vers.v"
+
+# implementation: "rev_1"
+impl -add rev_1 -type fpga
+
+# device options
+set_option -technology GOWIN-GW1NS
+set_option -part GW1NS_2C
+set_option -package LQFP144
+set_option -speed_grade -5
+
+set_option -frequency auto
+set_option -maxfan 10000
+set_option -disable_io_insertion 0
+set_option -update_models_cp 0
+set_option -rw_check_on_ram 1
+set_option -run_prop_extract 1
+set_option -symbolic_fsm_compiler 1
+set_option -resource_sharing 1
+set_option -pipe 1
+set_option -retiming 0
+set_option -write_apr_constraint 1
+set_option -vlog_std sysv
+set_option -compiler_compatible 0
+set_option -multi_file_compilation_unit 1
+set_option -looplimit 2000
+set_option -fix_gated_and_generated_clocks 1
+set_option -top_module USB_TOP
+
+# set result format/file
+project -result_file "only_rx.vm"
+impl -active "rev_1"
+project -run -clean
+

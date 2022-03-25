@@ -1,0 +1,54 @@
+#defaultlanguage:vhdl
+#OPTIONS:"|-mixedhdl|-top|work.usb_serial|-mpparams|E:\\IP_PROJECT\\USB\\USB2IIS\\test_0525\\usb2iis\\only_rx\\impl\\synthesize\\rev_1\\synwork\\_mh_params|-layerid|1|-orig_srs|E:\\IP_PROJECT\\USB\\USB2IIS\\test_0525\\usb2iis\\only_rx\\impl\\synthesize\\rev_1\\synwork\\only_rx_comp.srs|-prodtype|synplify_pro|-primux|-fixsmult|-sdff_counter|-nram|-divnmod|-nostructver|-gowin|-infer_seqShift|-encrypt|-pro|-lite|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-ignore_undefined_lib|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work"
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\bin64\\c_vhdl.exe":1589223566
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\lib\\vhd\\location.map":1589238678
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\lib\\vhd\\std.vhd":1589223772
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\lib\\vhd\\snps_haps_pkg.vhd":1589223772
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\lib\\vhd\\std1164.vhd":1589223772
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\lib\\vhd\\numeric.vhd":1589223772
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\lib\\vhd\\umr_capim.vhd":1589223772
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\lib\\vhd\\arith.vhd":1589223772
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\lib\\vhd\\unsigned.vhd":1589223772
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\lib\\vhd\\hyperents.vhd":1589223772
+#CUR:"E:\\IP_PROJECT\\USB\\USB2IIS\\test_0525\\usb2iis\\only_rx\\src\\usb_control.vhd":1587089042
+#CUR:"E:\\IP_PROJECT\\USB\\USB2IIS\\test_0525\\usb2iis\\only_rx\\src\\usb_ini.vhd":1587089059
+#CUR:"E:\\IP_PROJECT\\USB\\USB2IIS\\test_0525\\usb2iis\\only_rx\\src\\usb_packet.vhd":1587089080
+#CUR:"E:\\IP_PROJECT\\USB\\USB2IIS\\test_0525\\usb2iis\\only_rx\\src\\usb_pkg.vhd":1587089097
+#CUR:"E:\\IP_PROJECT\\USB\\USB2IIS\\test_0525\\usb2iis\\only_rx\\src\\usb_serial.vhd":1587089116
+#CUR:"E:\\IP_PROJECT\\USB\\USB2IIS\\test_0525\\usb2iis\\only_rx\\src\\usb_transact.vhd":1587089224
+0 "E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd" vhdl
+1 "E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd" vhdl
+2 "E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd" vhdl
+3 "E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_pkg.vhd" vhdl
+4 "E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd" vhdl
+5 "E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd" vhdl
+
+# Dependency Lists (Uses list)
+0 -1
+1 -1
+2 -1
+3 -1
+4 1 2 5 0 3 
+5 -1
+
+# Dependency Lists (Users Of)
+0 4 
+1 4 
+2 4 
+3 4 
+4 -1
+5 4 
+
+# Design Unit to File Association
+arch work usb_control usb_control_arch 0
+module work usb_control 0
+arch work usb_init usb_init_arch 1
+module work usb_init 1
+arch work usb_packet usb_packet_arch 2
+module work usb_packet 2
+arch work usb_serial usb_serial_arch 4
+module work usb_serial 4
+arch work usb_transact usb_transact_arch 5
+module work usb_transact 5
+
+# Unbound Instances to File Association

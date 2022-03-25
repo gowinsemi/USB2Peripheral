@@ -1,0 +1,51 @@
+# Written by Synplify Pro version mapgw, Build 1618R. Synopsys Run ID: sid1591772223 
+# Top Level Design Parameters 
+
+# Clocks 
+create_clock -period 16.677 -waveform {0.000 8.339} -name {_~usb_1p1_USB_TOP__2235_10182_256_10s_10s|PHY_CLKOUT_inferred_clock} [get_pins {u_usb_1p1/Phy/CLK}] 
+
+# Virtual Clocks 
+
+# Generated Clocks 
+
+# Paths Between Clocks 
+
+# Multicycle Constraints 
+
+# Point-to-point Delay Constraints 
+
+# False Path Constraints 
+
+# Output Load Constraints 
+
+# Driving Cell Constraints 
+
+# Input Delay Constraints 
+
+# Output Delay Constraints 
+
+# Wire Loads 
+
+# Other Constraints 
+
+# syn_hier Attributes 
+
+# set_case Attributes 
+
+# Clock Delay Constraints 
+
+# syn_mode Attributes 
+
+# Cells 
+
+# Port DRC Rules 
+
+# Input Transition Constraints 
+
+# Unused constraints (intentionally commented out) 
+
+
+# Non-forward-annotatable constraints (intentionally commented out) 
+
+# Block Path constraints 
+

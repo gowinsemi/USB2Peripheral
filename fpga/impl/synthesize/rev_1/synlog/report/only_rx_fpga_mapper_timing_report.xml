@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- *************************************************************************************
+FILE DESCRIPTION
+Max Top 5 critical clocks will be reported. For rest user needs to refer to Detailed report
+*******************************************************************************************-->
+<report_table display_priority="2" name="Timing Summary">
+<report_link name="Detailed report">
+<data>E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\impl\synthesize\rev_1\synlog\only_rx_fpga_mapper.srr</data>
+<title>START OF TIMING REPORT</title>
+</report_link>
+<row>
+<data tcl_name="clock_name">Clock Name</data>
+<data tcl_name="req_freq">Req Freq</data>
+<data tcl_name="est_freq">Est Freq</data>
+<data tcl_name="slack">Slack</data>
+</row>
+<row>
+<data>_~usb_1p1_USB_TOP__2235_10182_256_10s_10s|PHY_CLKOUT_inferred_clock</data>
+<data>60.0 MHz</data>
+<data>51.0 MHz</data>
+<data>-2.943</data>
+</row>
+<row>
+<data>System</data>
+<data>100.0 MHz</data>
+<data>NA</data>
+<data>15.293</data>
+</row>
+</report_table>

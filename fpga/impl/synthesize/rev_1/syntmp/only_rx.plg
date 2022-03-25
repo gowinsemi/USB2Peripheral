@@ -1,0 +1,18 @@
+@P:  Worst Slack : -2.943
+@P:  _~usb_1p1_USB_TOP__2235_10182_256_10s_10s|PHY_CLKOUT_inferred_clock - Estimated Frequency : 51.0 MHz
+@P:  _~usb_1p1_USB_TOP__2235_10182_256_10s_10s|PHY_CLKOUT_inferred_clock - Requested Frequency : 60.0 MHz
+@P:  _~usb_1p1_USB_TOP__2235_10182_256_10s_10s|PHY_CLKOUT_inferred_clock - Estimated Period : 19.620
+@P:  _~usb_1p1_USB_TOP__2235_10182_256_10s_10s|PHY_CLKOUT_inferred_clock - Requested Period : 16.677
+@P:  _~usb_1p1_USB_TOP__2235_10182_256_10s_10s|PHY_CLKOUT_inferred_clock - Slack : -2.943
+@P:  System - Estimated Frequency : NA
+@P:  System - Requested Frequency : 100.0 MHz
+@P:  System - Estimated Period : NA
+@P:  System - Requested Period : 10.000
+@P:  System - Slack : 15.293
+@P: USB_TOP Part : gw1ns_2clqfp144-5
+@P: USB_TOP I/O primitives : 43
+@P: USB_TOP I/O Register bits : 0
+@P: USB_TOP Register bits (Non I/O) : 392 (36%)
+@P: USB_TOP Block Rams : 3 of 4 (75%)
+@P: USB_TOP Total Luts : 818 of 800 (47%)
+@P:  CPU Time : 0h:00m:11s

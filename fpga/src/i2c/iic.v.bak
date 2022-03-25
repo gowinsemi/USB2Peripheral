@@ -1,0 +1,1549 @@
+
+
+// Copyright (C) 2018, Andes Technology Corp. Confidential Proprietary
+
+`include "iic_config.v"
+
+
+module atciic100 (
+	  i2c_int,
+	  paddr,
+	  penable,
+	  prdata,
+	  psel,
+	  pwdata,
+	  pwrite,
+	  pclk,
+	  presetn,
+      iic_rd,
+      rd_data,
+      entries,
+	  dma_ack,
+	  dma_req,
+	  scl_o,
+	  sda_o,
+	  scl_i,
+	  sda_i
+);
+
+output             i2c_int;
+input        [5:2] paddr;
+input              penable;
+output      [31:0] prdata;
+input              psel;
+input       [31:0] pwdata;
+input              pwrite;
+input              pclk;
+input              presetn;
+input              iic_rd;
+output  [`ATCIIC100_DATA_WIDTH-1:0] rd_data;
+output  [`ATCIIC100_INDEX_WIDTH-1:0] entries;
+input              dma_ack;
+output             dma_req;
+output             scl_o;
+output             sda_o;
+input              scl_i;
+input              sda_i;
+
+wire                               [9:0] addr;
+wire                                     addressing;
+wire                                     clr_apb;
+wire                               [8:0] datacnt;
+wire                                     dma_en;
+wire                                     do_ack;
+wire                                     do_nack;
+wire                                     iic_en;
+wire                                     iic_rst;
+wire                                     int_en_byterecv;
+wire                                     int_st_cmpl;
+wire                                     master;
+wire                                     phase_P;
+wire                                     phase_S;
+wire                                     phase_adr;
+wire                                     phase_dat;
+wire                                     rd_apb;
+wire                                     rdwt;
+wire                               [4:0] t_hddat;
+wire                               [9:0] t_high;
+wire                               [9:0] t_low;
+wire                               [2:0] t_sp;
+wire                               [4:0] t_sudat;
+wire                               [4:0] tpm;
+wire                                     trans;
+wire                                     wr_apb;
+wire         [`ATCIIC100_DATA_WIDTH-1:0] wr_data_apb;
+wire                                     addrhit_trig;
+wire                                     arblose_trig;
+wire                                     byterecv_trig;
+wire                                     bytetrans_trig;
+wire                                     clr_cntlr;
+wire                                     cmpl_trig;
+wire                               [8:0] nx_datacnt;
+wire                                     nx_rdwt;
+wire                                     rd_cntlr;
+wire                                     slv_hit;
+wire                                     st_ack;
+wire                                     st_busbusy;
+wire                                     st_gencall;
+wire                                     start_cond;
+wire                                     stop_cond;
+wire                                     timing_parameter_scaling_pulse;
+wire                                     wr_cntlr;
+wire         [`ATCIIC100_DATA_WIDTH-1:0] wr_data_cntlr;
+wire        [`ATCIIC100_INDEX_WIDTH-1:0] entries;
+wire                                     fifo_empty;
+wire                                     fifo_full;
+wire                                     fifo_half_empty;
+wire                                     fifo_half_full;
+wire         [`ATCIIC100_DATA_WIDTH-1:0] rd_data;
+wire                                     scl;
+wire                                     scl_falling;
+wire                                     scl_rising;
+wire                                     sda;
+wire                                     sda_falling;
+wire                                     sda_rising;
+
+
+atciic100_apbslv u_apbslv (
+	.pclk           (pclk           ),
+	.presetn        (presetn        ),
+	.psel           (psel           ),
+	.penable        (penable        ),
+	.pwrite         (pwrite         ),
+	.paddr          (paddr          ),
+	.pwdata         (pwdata         ),
+	.prdata         (prdata         ),
+	.sda            (sda            ),
+	.scl            (scl            ),
+	.i2c_int        (i2c_int        ),
+	.st_gencall     (st_gencall     ),
+	.st_busbusy     (st_busbusy     ),
+	.st_ack         (st_ack         ),
+	.nx_rdwt        (nx_rdwt        ),
+	.nx_datacnt     (nx_datacnt     ),
+	.cmpl_trig      (cmpl_trig      ),
+	.byterecv_trig  (byterecv_trig  ),
+	.bytetrans_trig (bytetrans_trig ),
+	.start_cond     (start_cond     ),
+	.stop_cond      (stop_cond      ),
+	.arblose_trig   (arblose_trig   ),
+	.addrhit_trig   (addrhit_trig   ),
+	.fifo_rd_data   (rd_data        ),
+	.fifo_empty     (fifo_empty     ),
+	.fifo_full      (fifo_full      ),
+	.fifo_half_full (fifo_half_full ),
+	.fifo_half_empty(fifo_half_empty),
+	.slv_hit        (slv_hit        ),
+	.addr           (addr           ),
+	.int_en_byterecv(int_en_byterecv),
+	.int_st_cmpl    (int_st_cmpl    ),
+	.iic_rst        (iic_rst        ),
+	.fifo_clr       (clr_apb        ),
+	.do_ack         (do_ack         ),
+	.do_nack        (do_nack        ),
+	.trans          (trans          ),
+	.fifo_wr        (wr_apb         ),
+	.fifo_rd        (rd_apb         ),
+	.fifo_wr_data   (wr_data_apb    ),
+	.phase_S        (phase_S        ),
+	.phase_adr      (phase_adr      ),
+	.phase_dat      (phase_dat      ),
+	.phase_P        (phase_P        ),
+	.rdwt           (rdwt           ),
+	.datacnt        (datacnt        ),
+	.t_sp           (t_sp           ),
+	.t_hddat        (t_hddat        ),
+	.t_sudat        (t_sudat        ),
+	.t_high         (t_high         ),
+	.t_low          (t_low          ),
+	.addressing     (addressing     ),
+	.master         (master         ),
+	.dma_en         (dma_en         ),
+	.iic_en         (iic_en         ),
+	.tpm            (tpm            )
+);
+
+atciic100_ctrl u_ctrl (
+	.pclk                          (pclk           ),
+	.presetn                       (presetn        ),
+	.scl                           (scl            ),
+	.sda                           (sda            ),
+	.scl_falling                   (scl_falling    ),
+	.scl_rising                    (scl_rising     ),
+	.sda_falling                   (sda_falling    ),
+	.sda_rising                    (sda_rising     ),
+	.scl_o                         (scl_o          ),
+	.sda_o                         (sda_o          ),
+	.addr                          (addr           ),
+	.int_en_byterecv               (int_en_byterecv),
+	.iic_rst                       (iic_rst        ),
+	.do_ack                        (do_ack         ),
+	.do_nack                       (do_nack        ),
+	.trans                         (trans          ),
+	.phase_S                       (phase_S        ),
+	.phase_adr                     (phase_adr      ),
+	.phase_dat                     (phase_dat      ),
+	.phase_P                       (phase_P        ),
+	.rdwt                          (rdwt           ),
+	.datacnt                       (datacnt        ),
+	.t_hddat                       (t_hddat        ),
+	.t_sudat                       (t_sudat        ),
+	.t_high                        (t_high         ),
+	.t_low                         (t_low          ),
+	.dma_en                        (dma_en         ),
+	.master                        (master         ),
+	.addressing                    (addressing     ),
+	.iic_en                        (iic_en         ),
+	.dma_ack                       (dma_ack        ),
+	.fifo_rd_data                  (rd_data        ),
+	.fifo_full                     (fifo_full      ),
+	.fifo_empty                    (fifo_empty     ),
+	.fifo_entries                  (entries        ),
+	.int_st_cmpl                   (int_st_cmpl    ),
+	.tpm                           (tpm            ),
+	.timing_parameter_scaling_pulse(timing_parameter_scaling_pulse),
+	.dma_req                       (dma_req        ),
+	.st_busbusy                    (st_busbusy     ),
+	.st_ack                        (st_ack         ),
+	.start_cond                    (start_cond     ),
+	.stop_cond                     (stop_cond      ),
+	.st_gencall                    (st_gencall     ),
+	.nx_datacnt                    (nx_datacnt     ),
+	.nx_rdwt                       (nx_rdwt        ),
+	.cmpl_trig                     (cmpl_trig      ),
+	.byterecv_trig                 (byterecv_trig  ),
+	.bytetrans_trig                (bytetrans_trig ),
+	.arblose_trig                  (arblose_trig   ),
+	.addrhit_trig                  (addrhit_trig   ),
+	.fifo_wr_data                  (wr_data_cntlr  ),
+	.fifo_wr                       (wr_cntlr       ),
+	.fifo_rd                       (rd_cntlr       ),
+	.fifo_clr                      (clr_cntlr      ),
+	.slv_hit                       (slv_hit        )
+);
+
+atciic100_fifo u_fifo (
+	.clk          (pclk           ),
+	.reset_n      (presetn        ),
+	.wr_apb       (wr_apb         ),
+	.wr_cntlr     (wr_cntlr       ),
+	.rd_apb       (rd_apb | iic_rd),
+	.rd_cntlr     (rd_cntlr       ),
+	.clr_apb      (clr_apb        ),
+	.clr_cntlr    (clr_cntlr      ),
+	.wr_data_apb  (wr_data_apb    ),
+	.wr_data_cntlr(wr_data_cntlr  ),
+	.full         (fifo_full      ),
+	.empty        (fifo_empty     ),
+	.half_full    (fifo_half_full ),
+	.half_empty   (fifo_half_empty),
+	.entries      (entries        ),
+	.rd_data      (rd_data        )
+);
+
+atciic100_gsf u_sda_gsf (
+	.pclk                          (pclk       ),
+	.presetn                       (presetn    ),
+	.t_sp                          (t_sp       ),
+	.I                             (sda_i      ),
+	.timing_parameter_scaling_pulse(timing_parameter_scaling_pulse),
+	.O                             (sda        ),
+	.rising_edge                   (sda_rising ),
+	.falling_edge                  (sda_falling)
+);
+
+atciic100_gsf u_scl_gsf (
+	.pclk                          (pclk       ),
+	.presetn                       (presetn    ),
+	.t_sp                          (t_sp       ),
+	.I                             (scl_i      ),
+	.timing_parameter_scaling_pulse(timing_parameter_scaling_pulse),
+	.O                             (scl        ),
+	.rising_edge                   (scl_rising ),
+	.falling_edge                  (scl_falling)
+);
+
+endmodule
+// Copyright (C) 2018, Andes Technology Corp. Confidential Proprietary
+
+`include "iic_config.v"
+
+module atciic100_apbslv(
+	  pclk,
+	  presetn,
+	  psel,
+	  penable,
+	  pwrite,
+	  paddr,
+	  pwdata,
+	  prdata,
+	  sda,
+	  scl,
+	  i2c_int,
+	  st_gencall,
+	  st_busbusy,
+	  st_ack,
+	  nx_rdwt,
+	  nx_datacnt,
+	  cmpl_trig,
+	  byterecv_trig,
+	  bytetrans_trig,
+	  start_cond,
+	  stop_cond,
+	  arblose_trig,
+	  addrhit_trig,
+	  fifo_rd_data,
+	  fifo_empty,
+	  fifo_full,
+	  fifo_half_full,
+	  fifo_half_empty,
+	  slv_hit,
+	  addr,
+	  int_en_byterecv,
+	  int_st_cmpl,
+	  iic_rst,
+	  fifo_clr,
+	  do_ack,
+	  do_nack,
+	  trans,
+	  fifo_wr,
+	  fifo_rd,
+	  fifo_wr_data,
+	  phase_S,
+	  phase_adr,
+	  phase_dat,
+	  phase_P,
+	  rdwt,
+	  datacnt,
+	  t_sp,
+	  t_hddat,
+	  t_sudat,
+	  t_high,
+	  t_low,
+	  addressing,
+	  master,
+	  dma_en,
+	  iic_en,
+	  tpm
+);
+
+parameter	CMD_IIC_RST		= 3'b101;
+parameter	CMD_FIFO_CLR		= 3'b100;
+parameter	CMD_DO_NACK		= 3'b011;
+parameter	CMD_DO_ACK		= 3'b010;
+parameter	CMD_TRANS		= 3'b001;
+
+input			pclk;
+input			presetn;
+input			psel;
+input			penable;
+input			pwrite;
+input		[5:2]	paddr;
+input		[31:0]	pwdata;
+output		[31:0]	prdata;
+
+input			sda;
+input			scl;
+output			i2c_int;
+
+input			st_gencall;
+input			st_busbusy;
+input			st_ack;
+input			nx_rdwt;
+input		[8:0]	nx_datacnt;
+input			cmpl_trig;
+input			byterecv_trig;
+input			bytetrans_trig;
+input			start_cond;
+input			stop_cond;
+input			arblose_trig;
+input			addrhit_trig;
+input		[7:0]	fifo_rd_data;
+input			fifo_empty;
+input			fifo_full;
+input			fifo_half_full;
+input			fifo_half_empty;
+input			slv_hit;
+
+output		[9:0]	addr;
+output			int_en_byterecv;
+output			int_st_cmpl;
+output			iic_rst;
+output			fifo_clr;
+output			do_ack;
+output			do_nack;
+output			trans;
+output			fifo_wr;
+output			fifo_rd;
+output		[7:0]	fifo_wr_data;
+output			phase_S;
+output			phase_adr;
+output			phase_dat;
+output			phase_P;
+output			rdwt;
+output		[8:0]	datacnt;
+output		[2:0]	t_sp;
+output		[4:0]	t_hddat;
+output		[4:0]	t_sudat;
+output		[9:0]	t_high;
+output		[9:0]	t_low;
+output			addressing;
+output			master;
+output			dma_en;
+output			iic_en;
+output		[4:0]	tpm;
+reg			int_en_cmpl;
+reg			int_en_byterecv;
+reg			int_en_bytetrans;
+reg			int_en_start;
+reg			int_en_stop;
+reg			int_en_arblose;
+reg			int_en_addrhit;
+reg			int_en_half;
+reg			int_en_full;
+reg			int_en_empty;
+
+reg			int_st_cmpl;
+reg			int_st_byterecv;
+reg			int_st_bytetrans;
+reg			int_st_start;
+reg			int_st_stop;
+reg			int_st_arblose;
+reg			int_st_addrhit;
+
+reg			phase_S;
+reg			phase_adr;
+reg			phase_dat;
+reg			phase_P;
+reg			rdwt;
+reg		[8:0]	datacnt;
+
+reg			trans;
+
+reg		[2:0]	t_sp;
+reg		[4:0]	t_hddat;
+reg		[4:0]	t_sudat;
+reg	    		t_sclratio;
+reg		[8:0]	t_sclhi;
+reg			dma_en;
+reg			master;
+reg			addressing;
+reg			iic_en;
+
+reg		[9:0]	addr;
+reg		[7:0]	data;
+
+reg		[4:0]	tpm;
+
+wire			id_sel;
+wire			cfg_sel;
+wire			int_en_sel;
+wire			ib_st_sel;
+wire			addr_sel;
+wire			data_sel;
+wire			ctrl_sel;
+wire			cmd_sel;
+wire			setup_sel;
+wire			tpm_sel;
+
+wire			pwrite_valid;
+
+wire		[31:0]	idrev;
+wire		[1:0]	cfg;
+wire		[9:0]	int_en;
+wire		[9:0]	int_st;
+wire		[4:0]	bus_st;
+wire		[12:0]	ctrl;
+wire		[28:0]	setup;
+wire		[9:0]	t_high;
+wire		[9:0]	t_low;
+wire 			fifo_half;
+
+assign	idrev	= `ATCIIC100_PRODUCT_ID;
+assign	cfg	= `ATCIIC100_FIFO_CONFIG;
+assign	int_en	= {int_en_cmpl, int_en_byterecv, int_en_bytetrans, int_en_start, int_en_stop, int_en_arblose,
+				   int_en_addrhit, int_en_half, int_en_full, int_en_empty};
+assign	int_st	= {int_st_cmpl, int_st_byterecv, int_st_bytetrans, int_st_start, int_st_stop, int_st_arblose,
+				   int_st_addrhit, fifo_half, fifo_full, fifo_empty};
+assign	bus_st	= {sda, scl, st_gencall, st_busbusy, st_ack};
+assign	ctrl	= {phase_S, phase_adr, phase_dat, phase_P, rdwt, datacnt[7:0]};
+assign	setup	= {t_sudat, t_sp, t_hddat, 2'b0, t_sclratio, t_sclhi, dma_en, master, addressing, iic_en};
+
+assign	id_sel		= psel & ({paddr[5:2], 2'b0} == 6'h00);
+assign	cfg_sel		= psel & ({paddr[5:2], 2'b0} == 6'h10);
+assign	int_en_sel	= psel & ({paddr[5:2], 2'b0} == 6'h14);
+assign	ib_st_sel	= psel & ({paddr[5:2], 2'b0} == 6'h18);
+assign	addr_sel	= psel & ({paddr[5:2], 2'b0} == 6'h1C);
+assign	data_sel	= psel & ({paddr[5:2], 2'b0} == 6'h20);
+assign	ctrl_sel	= psel & ({paddr[5:2], 2'b0} == 6'h24);
+assign	cmd_sel		= psel & ({paddr[5:2], 2'b0} == 6'h28);
+assign	setup_sel	= psel & ({paddr[5:2], 2'b0} == 6'h2C);
+assign	tpm_sel		= psel & ({paddr[5:2], 2'b0} == 6'h30);
+
+assign pwrite_valid = penable & pwrite;
+
+always @(posedge pclk or negedge presetn)
+	if (!presetn) begin
+		int_en_cmpl		<= 1'b0;
+		int_en_byterecv 	<= 1'b0;
+		int_en_bytetrans 	<= 1'b0;
+		int_en_start		<= 1'b0;
+		int_en_stop		<= 1'b0;
+		int_en_arblose		<= 1'b0;
+		int_en_addrhit		<= 1'b0;
+		int_en_half		<= 1'b0;
+		int_en_full		<= 1'b0;
+		int_en_empty		<= 1'b0;
+	end
+	else if (iic_rst) begin
+		int_en_cmpl		<= 1'b0;
+		int_en_byterecv 	<= 1'b0;
+		int_en_bytetrans 	<= 1'b0;
+		int_en_start		<= 1'b0;
+		int_en_stop		<= 1'b0;
+		int_en_arblose		<= 1'b0;
+		int_en_addrhit		<= 1'b0;
+		int_en_half		<= 1'b0;
+		int_en_full		<= 1'b0;
+		int_en_empty		<= 1'b0;
+	end
+	else if (pwrite_valid & int_en_sel) begin
+		int_en_cmpl		<= pwdata[9];
+		int_en_byterecv 	<= pwdata[8];
+		int_en_bytetrans 	<= pwdata[7];
+		int_en_start		<= pwdata[6];
+		int_en_stop		<= pwdata[5];
+		int_en_arblose		<= pwdata[4];
+		int_en_addrhit		<= pwdata[3];
+		int_en_half		<= pwdata[2];
+		int_en_full		<= pwdata[1];
+		int_en_empty		<= pwdata[0];
+	end
+
+
+assign 	i2c_int =
+	(fifo_full & int_en_full) |
+	(fifo_empty & int_en_empty) |
+	(fifo_half & int_en_half) |
+	(int_st_addrhit & int_en_addrhit) |
+	(int_st_arblose & int_en_arblose) |
+	(int_st_stop & int_en_stop) |
+	(int_st_start & int_en_start) |
+	(int_st_bytetrans & int_en_bytetrans) |
+	(int_st_byterecv & int_en_byterecv) |
+	(int_st_cmpl & int_en_cmpl);
+
+always @(posedge pclk or negedge presetn)
+	if (!presetn)
+		int_st_cmpl <= 1'b0;
+	else if (iic_rst | (pwrite_valid & ib_st_sel & pwdata[9]))
+		int_st_cmpl <= 1'b0;
+	else if (cmpl_trig)
+		int_st_cmpl <= 1'b1;
+
+always @(posedge pclk or negedge presetn)
+	if (!presetn)
+		int_st_byterecv <= 1'b0;
+	else if (iic_rst | (pwrite_valid & ib_st_sel & pwdata[8]))
+		int_st_byterecv <= 1'b0;
+	else if (byterecv_trig)
+		int_st_byterecv <= 1'b1;
+
+always @(posedge pclk or negedge presetn)
+	if (!presetn)
+		int_st_bytetrans <= 1'b0;
+	else if (iic_rst | (pwrite_valid & ib_st_sel & pwdata[7]))
+		int_st_bytetrans <= 1'b0;
+	else if (bytetrans_trig)
+		int_st_bytetrans <= 1'b1;
+
+always @(posedge pclk or negedge presetn)
+	if (!presetn)
+		int_st_start <= 1'b0;
+	else if (iic_rst | (pwrite_valid & ib_st_sel & pwdata[6]))
+		int_st_start <= 1'b0;
+	else if (start_cond)
+		int_st_start <= 1'b1;
+
+always @(posedge pclk or negedge presetn)
+	if (!presetn)
+		int_st_stop <= 1'b0;
+	else if (iic_rst | slv_hit | (pwrite_valid & ib_st_sel & pwdata[5]))
+		int_st_stop <= 1'b0;
+	else if (stop_cond)
+		int_st_stop <= 1'b1;
+
+always @(posedge pclk or negedge presetn)
+	if (!presetn)
+		int_st_arblose <= 1'b0;
+	else if (iic_rst | (pwrite_valid & ib_st_sel & pwdata[4]))
+		int_st_arblose <= 1'b0;
+	else if (arblose_trig)
+		int_st_arblose <= 1'b1;
+
+always @(posedge pclk or negedge presetn)
+	if (!presetn)
+		int_st_addrhit <= 1'b0;
+	else if (iic_rst | (pwrite_valid & ib_st_sel & pwdata[3]))
+		int_st_addrhit <= 1'b0;
+	else if (addrhit_trig)
+		int_st_addrhit <= 1'b1;
+
+always @(posedge pclk or negedge presetn)
+	if (!presetn)
+		addr <= 10'b0;
+	else if (pwrite_valid & addr_sel)
+		addr <= pwdata[9:0];
+
+assign	fifo_wr			= pwrite_valid & data_sel & !fifo_full;
+assign	fifo_wr_data	= pwdata[7:0];
+assign	fifo_rd			= ~pwrite & penable & data_sel & !fifo_empty;
+assign 	fifo_half		= (master ^ rdwt) ? fifo_half_empty : fifo_half_full;
+
+always @(posedge pclk or negedge presetn)
+	if (!presetn) begin
+		phase_S		<= 1'b1;
+		phase_adr	<= 1'b1;
+		phase_dat	<= 1'b1;
+		phase_P		<= 1'b1;
+	end
+	else if (pwrite_valid & ctrl_sel) begin
+		phase_S		<= pwdata[12];
+		phase_adr	<= pwdata[11];
+		phase_dat	<= pwdata[10];
+		phase_P		<= pwdata[9];
+	end
+
+always @(posedge pclk or negedge presetn)
+	if (!presetn)
+		rdwt	<= 1'b0;
+	else if (pwrite_valid & ctrl_sel)
+		rdwt	<= pwdata[8];
+	else
+		rdwt	<= nx_rdwt;
+
+always @(posedge pclk or negedge presetn)
+	if (!presetn)
+		datacnt	<= 9'h0;
+	else if (pwrite_valid & ctrl_sel)
+		datacnt	<= {pwdata[7:0] == 8'h0, pwdata[7:0]};
+	else
+		datacnt	<= nx_datacnt;
+
+
+assign fifo_clr	= (pwrite_valid && cmd_sel && (pwdata[2:0] == CMD_FIFO_CLR)) | iic_rst;
+assign do_nack	=  pwrite_valid && cmd_sel && (pwdata[2:0] == CMD_DO_NACK);
+assign do_ack	=  pwrite_valid && cmd_sel && (pwdata[2:0] == CMD_DO_ACK);
+assign iic_rst	=  pwrite_valid && cmd_sel && (pwdata[2:0] == CMD_IIC_RST);
+
+always @(posedge pclk or negedge presetn)
+	if (!presetn)
+		trans <= 1'b0;
+	else if (pwrite_valid && cmd_sel && (pwdata[2:0] == CMD_TRANS))
+		trans <= 1'b1;
+	else if (cmpl_trig || arblose_trig)
+		trans <= 1'b0;
+
+assign	t_high	= {1'b0, t_sclhi};
+assign	t_low	= t_sclratio ? {t_sclhi, 1'b1} : {1'b0, t_sclhi};
+
+always @(posedge pclk or negedge presetn)
+	if (!presetn) begin
+		t_sudat		<= 5'h05;
+		t_sp		<= 3'h1;
+		t_hddat		<= 5'h05;
+		t_sclratio	<= 1'h1;
+		t_sclhi		<= 9'h010;
+		dma_en		<= 1'b0;
+		master		<= 1'b0;
+		addressing	<= 1'b0;
+		iic_en		<= 1'b0;
+	end
+	else if (pwrite_valid & setup_sel) begin
+		t_sudat		<= pwdata[28:24];
+		t_sp		<= pwdata[23:21];
+		t_hddat		<= pwdata[20:16];
+		t_sclratio	<= pwdata[13];
+		t_sclhi		<= pwdata[12:4];
+		dma_en		<= pwdata[3];
+		master		<= pwdata[2];
+		addressing	<= pwdata[1];
+		iic_en		<= pwdata[0];
+	end
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn) begin
+		tpm <= 5'h00;
+	end
+	else if (pwrite_valid & tpm_sel) begin
+		tpm <= pwdata[4:0];
+	end
+end
+
+assign	prdata = {32{~pwrite}} & (
+		{       {32{id_sel}}     & idrev} |
+		{30'h0, { 2{cfg_sel}}    & cfg} |
+		{22'h0, {10{int_en_sel}} & int_en} |
+		{17'h0, {15{ib_st_sel}}  & {bus_st, int_st}} |
+		{22'h0, {10{addr_sel}}   & addr} |
+		{24'h0, { 8{data_sel & !fifo_empty}} & fifo_rd_data} |
+		{19'h0, {13{ctrl_sel}}   & ctrl} |
+		{31'h0, cmd_sel          & trans} |
+		{3'h0,  {29{setup_sel}}   & setup} |
+		{27'h0, {5{tpm_sel}}     & tpm});
+
+endmodule
+
+// Copyright (C) 2018, Andes Technology Corp. Confidential Proprietary
+
+`include "iic_config.v"
+
+module atciic100_ctrl(
+		  pclk,
+		  presetn,
+		  scl,
+		  sda,
+		  scl_falling,
+		  scl_rising,
+		  sda_falling,
+		  sda_rising,
+		  scl_o,
+		  sda_o,
+		  addr,
+		  int_en_byterecv,
+		  iic_rst,
+		  do_ack,
+		  do_nack,
+		  trans,
+		  phase_S,
+		  phase_adr,
+		  phase_dat,
+		  phase_P,
+		  rdwt,
+		  datacnt,
+		  t_hddat,
+		  t_sudat,
+		  t_high,
+		  t_low,
+		  dma_en,
+		  master,
+		  addressing,
+		  iic_en,
+		  dma_ack,
+		  fifo_rd_data,
+		  fifo_full,
+		  fifo_empty,
+		  fifo_entries,
+		  int_st_cmpl,
+		  tpm,
+		  timing_parameter_scaling_pulse,
+		  dma_req,
+		  st_busbusy,
+		  st_ack,
+		  start_cond,
+		  stop_cond,
+		  st_gencall,
+		  nx_datacnt,
+		  nx_rdwt,
+		  cmpl_trig,
+		  byterecv_trig,
+		  bytetrans_trig,
+		  arblose_trig,
+		  addrhit_trig,
+		  fifo_wr_data,
+		  fifo_wr,
+		  fifo_rd,
+		  fifo_clr,
+		  slv_hit
+);
+
+parameter [4:0]	ST_IDLE		= 5'd0,
+				ST_S_S		= 5'd1,
+				ST_S_ADR7	= 5'd2,
+				ST_S_ACK7	= 5'd3,
+				ST_S_ADR10	= 5'd4,
+				ST_S_ACK10	= 5'd5,
+				ST_S_DAT_T	= 5'd6,
+				ST_S_ACK_T	= 5'd7,
+				ST_S_DAT_R	= 5'd8,
+				ST_S_ACK_R	= 5'd9,
+				ST_M_INIT	= 5'd16,
+				ST_M_S		= 5'd17,
+				ST_M_ADR7	= 5'd18,
+				ST_M_ACK7	= 5'd19,
+				ST_M_ADR10	= 5'd20,
+				ST_M_ACK10	= 5'd21,
+				ST_M_DAT_T	= 5'd22,
+				ST_M_ACK_T	= 5'd23,
+				ST_M_DAT_R	= 5'd24,
+				ST_M_ACK_R	= 5'd25,
+				ST_M_P		= 5'd26;
+
+parameter TEN_BIT_ADR	= 5'b11110;
+parameter IIC_ACK		= 1'b0;
+parameter IIC_NACK		= 1'b1;
+
+localparam TPM_CNTR_ZERO = 5'd0;
+
+input			pclk;
+input			presetn;
+
+input			scl;
+input			sda;
+input			scl_falling;
+input			scl_rising;
+input			sda_falling;
+input			sda_rising;
+
+output			scl_o;
+output			sda_o;
+
+input	[9:0]	addr;
+input			int_en_byterecv;
+input			iic_rst;
+input			do_ack;
+input			do_nack;
+input			trans;
+input			phase_S;
+input			phase_adr;
+input			phase_dat;
+input			phase_P;
+input			rdwt;
+input	[8:0]	datacnt;
+input	[4:0]	t_hddat;
+input	[4:0]	t_sudat;
+input	[9:0]	t_high;
+input	[9:0]	t_low;
+input			dma_en;
+input			master;
+input			addressing;
+input			iic_en;
+input			dma_ack;
+input	[7:0]	fifo_rd_data;
+input			fifo_full;
+input			fifo_empty;
+input	[`ATCIIC100_INDEX_WIDTH-1:0]	fifo_entries;
+input			int_st_cmpl;
+input	[4:0]	tpm;
+
+output			timing_parameter_scaling_pulse;
+output			dma_req;
+output			st_busbusy;
+output			st_ack;
+output			start_cond;
+output			stop_cond;
+output			st_gencall;
+output	[8:0]	nx_datacnt;
+output			nx_rdwt;
+output			cmpl_trig;
+output			byterecv_trig;
+output			bytetrans_trig;
+output			arblose_trig;
+output			addrhit_trig;
+output	[7:0]	fifo_wr_data;
+output			fifo_wr;
+output			fifo_rd;
+output			fifo_clr;
+output			slv_hit;
+
+reg				scl_o;
+reg				sda_o;
+reg				nx_scl_o;
+reg				nx_sda_o;
+
+reg				st_busbusy;
+reg				busbusy_flag;
+reg				st_ack;
+reg				st_gencall;
+reg				ten_b_flag;
+reg		[8:0]	nx_datacnt;
+reg				nx_rdwt;
+
+reg		[9:0]	cntr;
+reg		[7:0]	sr;
+reg		[2:0]	bit_cnt;
+
+reg				sr_ready;
+reg				ack_ready;
+
+reg		[4:0]	cs;
+reg		[4:0]	ns;
+
+wire			cmpl_trig;
+wire			byterecv_trig;
+wire			bytetrans_trig;
+wire			arblose_trig;
+wire			addrhit_trig;
+reg				dma_req;
+
+
+wire			start_cond;
+wire			stop_cond;
+wire			t_high_end;
+wire			t_low_end;
+wire			t_hold_end;
+wire			t_scl_rel;
+wire			adr7_hit;
+wire			adr10_0_hit;
+wire			adr10_1_hit;
+wire			gencall_hit;
+wire			slv_hit;
+reg				slv_hit_10bit_wr_flag;
+reg				scl_rel_flag;
+
+wire			cntr_pause;
+wire			cntr_reset;
+wire			fifo_wr;
+wire			fifo_rd;
+
+reg				timing_parameter_scaling_pulse;
+reg		[4:0]	timing_parameter_cntr;
+wire			timing_parameter_scaling_pulse_nx;
+wire	[4:0]	timing_parameter_cntr_nx;
+
+assign	start_cond	= sda_falling & scl & !scl_falling & !scl_rising;
+assign	stop_cond	= sda_rising  & scl & !scl_falling & !scl_rising;
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn)
+		st_busbusy <= 1'b0;
+	else if (iic_rst | stop_cond)
+		st_busbusy <= 1'b0;
+	else if (start_cond)
+		st_busbusy <= 1'b1;
+end
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn)
+		busbusy_flag <= 1'b0;
+	else if (iic_rst | stop_cond | arblose_trig)
+		busbusy_flag <= 1'b0;
+	else if ((cs == ST_M_S) && start_cond)
+		busbusy_flag <= 1'b1;
+end
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn)
+		scl_rel_flag <= 1'b0;
+	else if (!master && t_hold_end && sr_ready && ack_ready)
+		scl_rel_flag <= 1'b1;
+	else if (scl_rising)
+		scl_rel_flag <= 1'b0;
+end
+
+assign 	t_high_end	=  scl && (cntr == t_high) && timing_parameter_scaling_pulse;
+assign 	t_low_end	= !scl && (cntr == t_low)  && timing_parameter_scaling_pulse;
+assign	t_hold_end	= !scl && (cntr == {5'b0, t_hddat}) && !scl_rel_flag && timing_parameter_scaling_pulse;
+assign 	t_scl_rel	= !scl && (cntr == {5'b0, t_sudat}) && scl_rel_flag  && timing_parameter_scaling_pulse;
+
+assign	adr7_hit	= !addressing && (sr[7:1] == addr[6:0]);
+assign	adr10_0_hit	= addressing && (sr[7:1] == {5'b11110, addr[9:8]}) && (sr[0] == ten_b_flag);
+assign	adr10_1_hit	= addressing && (sr[7:0] == addr[7:0]);
+assign	gencall_hit	= sr[7:1] == 7'b0;
+
+always @* begin
+	if (stop_cond || iic_rst || arblose_trig)
+		ns = ST_IDLE;
+	else begin
+		ns = cs;
+		case (cs)
+			ST_S_S:
+				if (scl_falling)							ns = ST_S_ADR7;
+			ST_S_ADR7:
+				if (scl_falling && (bit_cnt == 3'h0)) begin
+					if (gencall_hit || adr7_hit || adr10_0_hit)	ns = ST_S_ACK7;
+					else									ns = ST_IDLE;
+				end
+			ST_S_ACK7:
+				if (scl_falling) begin
+					if (ten_b_flag | rdwt)					ns = ST_S_DAT_T;
+					else if (addressing && !gencall_hit)	ns = ST_S_ADR10;
+					else									ns = ST_S_DAT_R;
+				end
+			ST_S_ADR10:
+				if (scl_falling && (bit_cnt == 3'h0)) begin
+					if (adr10_1_hit)						ns = ST_S_ACK10;
+					else									ns = ST_IDLE;
+				end
+			ST_S_ACK10:
+				if (scl_falling)							ns = ST_S_DAT_R;
+			ST_S_DAT_T:
+				if (scl_falling && (bit_cnt == 3'b0))			ns = ST_S_ACK_T;
+			ST_S_ACK_T:
+				if (scl_falling) begin
+					if (st_ack)								ns = ST_S_DAT_T;
+					else 									ns = ST_IDLE;
+				end
+			ST_S_DAT_R:
+				if (start_cond)								ns = ST_S_S;
+				else if (scl_falling && (bit_cnt == 3'b0))  	ns = ST_S_ACK_R;
+			ST_S_ACK_R:
+				if (scl_falling) begin
+					if (st_ack)								ns = ST_S_DAT_R;
+					else									ns = ST_IDLE;
+				end
+			ST_M_INIT:
+				if (!scl)									ns = phase_adr ? ST_M_ADR7 : phase_dat ? rdwt ? ST_M_DAT_R : ST_M_DAT_T : ST_M_P;
+			ST_M_S:
+				if (scl_falling) 							ns = phase_adr ? ST_M_ADR7 : phase_dat ? rdwt ? ST_M_DAT_R : ST_M_DAT_T : phase_P ? ST_M_P : ST_IDLE;
+			ST_M_ADR7:
+				if (scl_falling && (bit_cnt == 3'b0))			ns = ST_M_ACK7;
+			ST_M_ACK7:
+				if (scl_falling) begin
+					if (st_ack) begin
+						if (ten_b_flag | !addressing)		ns = phase_dat ? rdwt ? ST_M_DAT_R : ST_M_DAT_T : phase_P ? ST_M_P : ST_IDLE;
+						else								ns = ST_M_ADR10;
+					end
+					else									ns = phase_P ? ST_M_P : ST_IDLE;
+				end
+			ST_M_ADR10:
+				if (scl_falling && (bit_cnt == 3'b0)) 			ns = ST_M_ACK10;
+			ST_M_ACK10:
+				if (scl_falling) begin
+					if (st_ack) begin
+						if (!rdwt)							ns = phase_dat ? ST_M_DAT_T : phase_P ? ST_M_P : ST_IDLE;
+						else								ns = ST_M_S;
+					end
+					else									ns = phase_P ? ST_M_P : ST_IDLE;
+				end
+			ST_M_DAT_T:
+				if (scl_falling && (bit_cnt == 3'b0)) 			ns = ST_M_ACK_T;
+			ST_M_ACK_T:
+				if (scl_falling) begin
+					if (!st_ack || (datacnt == 9'h0))		ns = phase_P ? ST_M_P : ST_IDLE;
+					else 									ns = ST_M_DAT_T;
+				end
+			ST_M_DAT_R:
+				if (scl_falling && (bit_cnt == 3'b0)) 			ns = ST_M_ACK_R;
+			ST_M_ACK_R:
+				if (scl_falling) begin
+					if (st_ack)								ns = ST_M_DAT_R;
+					else 									ns = phase_P ? ST_M_P : ST_IDLE;
+				end
+			ST_M_P:
+				if ((t_high_end && scl && sda) || scl_falling)	ns = ST_IDLE;
+			default:
+				if (!master && start_cond && iic_en) 		ns = ST_S_S;
+				else if (master && trans && iic_en && (!st_busbusy || busbusy_flag))			ns = phase_S ? ST_M_S : ST_M_INIT;
+		endcase
+	end
+end
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn)
+		cs <= ST_IDLE;
+	else
+		cs <= ns;
+end
+
+always @* begin
+	nx_scl_o = scl_o;
+	case (cs)
+		ST_M_INIT:
+			nx_scl_o = 1'b0;
+		ST_M_S:
+			if (t_low_end)
+				nx_scl_o = 1'b1;
+			else if ((t_high_end || scl_falling) && !sda_o)
+				nx_scl_o = 1'b0;
+		ST_S_ACK7:
+			if (!int_st_cmpl || addressing)
+				nx_scl_o = 1'b1;
+			else
+				nx_scl_o = 1'b0;
+		ST_S_ACK10:
+			if (!int_st_cmpl)
+				nx_scl_o = 1'b1;
+			else
+				nx_scl_o = 1'b0;
+		ST_S_DAT_T:
+			if (!sr_ready)
+				nx_scl_o = 1'b0;
+			else if (t_scl_rel)
+				nx_scl_o = 1'b1;
+		ST_S_ACK_R:
+			if (!ack_ready || !sr_ready)
+				nx_scl_o = 1'b0;
+			else if (t_scl_rel)
+				nx_scl_o = 1'b1;
+		ST_M_ADR7, ST_M_ACK7, ST_M_ADR10, ST_M_ACK10,
+			ST_M_DAT_T, ST_M_ACK_T, ST_M_DAT_R, ST_M_ACK_R:
+			if (t_low_end)
+				nx_scl_o = 1'b1;
+			else if (t_high_end || scl_falling)
+				nx_scl_o = 1'b0;
+		ST_M_P:
+			if (t_low_end)
+				nx_scl_o = 1'b1;
+		default:
+				nx_scl_o = scl_o;
+	endcase
+end
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn)
+		scl_o <= 1'b1;
+	else if (iic_rst || arblose_trig)
+		scl_o <= 1'b1;
+	else if (timing_parameter_scaling_pulse)
+		scl_o <= nx_scl_o;
+end
+
+always @* begin
+	nx_sda_o = sda_o;
+	case(cs)
+		ST_M_S:
+			if (t_hold_end)
+				nx_sda_o = 1'b1;
+			else if(t_high_end)
+				nx_sda_o = 1'b0;
+		ST_S_DAT_T, ST_M_ADR7, ST_M_ADR10, ST_M_DAT_T:
+			if (t_hold_end)
+				nx_sda_o = sr[7];
+		ST_S_ACK7, ST_S_ACK10, ST_S_ACK_R, ST_M_ACK_R:
+			if (t_hold_end)
+				nx_sda_o = st_ack ? IIC_ACK : IIC_NACK;
+		ST_S_ADR10, ST_S_DAT_R, ST_S_ACK_T, ST_M_ACK7, ST_M_ACK10, ST_M_DAT_R, ST_M_ACK_T:
+			if (t_hold_end)
+				nx_sda_o = 1'b1;
+		ST_M_P:
+			if (t_hold_end)
+				nx_sda_o = 1'b0;
+			else if (t_high_end)
+				nx_sda_o = 1'b1;
+		default:
+			nx_sda_o = sda_o;
+	endcase
+end
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn)
+		sda_o <= 1'b1;
+	else if (iic_rst || arblose_trig)
+		sda_o <= 1'b1;
+	else if (timing_parameter_scaling_pulse)
+		sda_o <= nx_sda_o;
+end
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn)
+		bit_cnt <= 3'h7;
+	else if (cs == ST_IDLE)
+		bit_cnt <= 3'h7;
+    else if (((cs == ST_S_ADR7) || (cs == ST_S_ADR10) || (cs == ST_S_DAT_T) || (cs == ST_S_DAT_R) ||
+			  (cs == ST_M_ADR7) || (cs == ST_M_ADR10) || (cs == ST_M_DAT_T) || (cs == ST_M_DAT_R)) && scl_falling)
+		bit_cnt <= bit_cnt - 3'h1;
+end
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn)
+		sr <= 8'b0;
+	else if (fifo_rd)
+		sr <= fifo_rd_data;
+	else if ((cs != ST_M_ADR7) && (ns == ST_M_ADR7))
+		sr <= addressing ? {TEN_BIT_ADR, addr[9:8], ten_b_flag} : {addr[6:0], rdwt};
+	else if ((cs == ST_M_ACK7) && (ns == ST_M_ADR10))
+		sr <= addr[7:0];
+	else if (((cs == ST_M_ADR7) || (cs == ST_M_ADR10) || (cs == ST_M_DAT_T) || (cs == ST_S_DAT_T) ||
+		(cs == ST_S_ADR7)  || (cs == ST_S_ADR10) ||	(cs == ST_S_DAT_R) || (cs == ST_M_DAT_R))
+		&& scl_rising)
+		sr <= {sr[6:0], sda};
+end
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn)
+		ten_b_flag <= 1'b0;
+	else if (cs == ST_IDLE)
+		ten_b_flag <= 1'b0;
+	else if ((cs == ST_S_ADR10) && (ns == ST_S_ACK10) && adr10_1_hit)
+		ten_b_flag <= 1'b1;
+	else if ((cs == ST_M_ACK10) && scl_rising && !sda)
+		ten_b_flag <= 1'b1;
+end
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn)
+		sr_ready <= 1'b1;
+	else if (iic_rst | (ns == ST_IDLE))
+		sr_ready <= 1'b1;
+	else if ((((cs == ST_S_ACK_R) || (cs == ST_M_ACK_R)) && !fifo_full) ||
+			 (((cs == ST_S_DAT_T) || (cs == ST_M_DAT_T)) && !fifo_empty))
+		sr_ready <= 1'b1;
+	else if ((((cs == ST_S_DAT_R) && (ns == ST_S_ACK_R)) || ((cs == ST_M_DAT_R) && (ns == ST_M_ACK_R))) && fifo_full)
+		sr_ready <= 1'b0;
+	else if ((((cs != ST_S_DAT_T) && (ns == ST_S_DAT_T)) || ((cs != ST_M_DAT_T) && (ns == ST_M_DAT_T))) && fifo_empty)
+		sr_ready <= 1'b0;
+end
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn)
+		ack_ready <= 1'b1;
+	else if (do_ack | do_nack | iic_rst | (ns == ST_IDLE))
+		ack_ready <= 1'b1;
+	else if ((((cs == ST_S_DAT_R) && (ns == ST_S_ACK_R)) || ((cs == ST_M_DAT_R) && (ns == ST_M_ACK_R))) && int_en_byterecv)
+		ack_ready <= 1'b0;
+end
+
+assign cntr_pause = (master && (scl_o != scl)) || !sr_ready || !ack_ready || (cs == ST_M_INIT);
+assign cntr_reset = scl_falling || scl_rising || iic_rst || (cs == ST_IDLE) ||
+					(((cs == ST_M_P) || (cs == ST_M_S)) && t_high_end) ||
+					(!master && t_hold_end && !scl_rel_flag);
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn)
+		cntr <= 10'h0;
+	else if (cntr_reset && timing_parameter_scaling_pulse)
+		cntr <= 10'h0;
+	else if (!cntr_pause && timing_parameter_scaling_pulse)
+		cntr <= cntr + 10'h001;
+end
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn)
+		slv_hit_10bit_wr_flag <= 1'b0;
+	else if (cs == ST_IDLE)
+		slv_hit_10bit_wr_flag <= 1'b0;
+	else if ((cs == ST_S_ACK10) && (ns == ST_S_DAT_R))
+		slv_hit_10bit_wr_flag <= 1'b1;
+	else if ((cs == ST_S_DAT_R) && scl_falling && (bit_cnt == 3'h7))
+		slv_hit_10bit_wr_flag <= 1'b0;
+end
+
+assign slv_hit = ((cs == ST_S_ACK7) && scl_rising && (gencall_hit || !addressing || ten_b_flag)) ||
+				((cs == ST_S_DAT_R) && scl_falling && (bit_cnt == 3'h7) && slv_hit_10bit_wr_flag);
+always @* begin
+	if (slv_hit & !dma_en)
+		nx_datacnt = 9'h0;
+	else if (fifo_rd | fifo_wr)
+		nx_datacnt = (master | dma_en) ? (datacnt - 9'h001) : (datacnt + 9'h001);
+	else
+		nx_datacnt = datacnt;
+end
+
+always @* begin
+	if ((cs == ST_S_ADR7) && (ns == ST_S_ACK7))
+		nx_rdwt = sr[0];
+	else
+		nx_rdwt = rdwt;
+end
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn)
+		st_gencall <= 1'b0;
+	else if (iic_rst)
+		st_gencall <= 1'b0;
+	else if (slv_hit) begin
+		if ((cs == ST_S_ACK7) && scl_rising && gencall_hit)
+			st_gencall <= 1'b1;
+		else
+			st_gencall <= 1'b0;
+	end
+end
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn)
+		st_ack <= 1'b0;
+	else if (iic_rst)
+		st_ack <= 1'b0;
+	else if ((cs == ST_M_DAT_R) && (ns == ST_M_ACK_R))
+		st_ack <= (datacnt != 9'h001);
+	else if ((cs == ST_S_DAT_R) && (ns == ST_S_ACK_R))
+		st_ack <= 1'b1;
+	else if (((cs == ST_S_ACK_R) || (cs == ST_M_ACK_R)) && !ack_ready) begin
+		if (do_ack)
+			st_ack <= 1'b1;
+		else if (do_nack)
+			st_ack <= 1'b0;
+	end
+	else if (cs == ST_S_ADR7) begin
+		if (ns == ST_S_ACK7)
+			st_ack <= 1'b1;
+		else if (ns == ST_IDLE)
+			st_ack <= 1'b0;
+	end
+	else if (cs == ST_S_ADR10) begin
+		if (ns == ST_S_ACK10)
+			st_ack <= 1'b1;
+		else if (ns == ST_IDLE)
+			st_ack <= 1'b0;
+	end
+	else if (((cs == ST_M_ACK7) || (cs == ST_M_ACK10) ||
+			(cs == ST_M_ACK_T) || (cs == ST_S_ACK_T)) && scl_rising)
+		st_ack <= (sda == IIC_ACK);
+end
+
+assign arblose_trig =
+	((cs == ST_M_S) && t_high_end && sda_o && !sda) ||
+	(((cs == ST_M_ADR7) || (cs == ST_M_ADR10) || (cs == ST_M_DAT_T) || (cs == ST_M_ACK_R)) &&
+		((scl_rising && sda_o && !sda) || start_cond || stop_cond)) ||
+	(((cs == ST_M_DAT_R) || (cs == ST_M_ACK_T)) && (start_cond || stop_cond));
+
+assign byterecv_trig =
+	((cs == ST_S_DAT_R) && (ns == ST_S_ACK_R)) ||
+	((cs == ST_M_DAT_R) && (ns == ST_M_ACK_R));
+
+assign bytetrans_trig =
+	((cs == ST_M_ACK_T) || (cs == ST_S_ACK_T)) && scl_falling;
+
+assign addrhit_trig =
+	slv_hit ||
+	((cs == ST_M_ACK7) && scl_rising && (sda == IIC_ACK) && (ten_b_flag | !addressing | gencall_hit)) ||
+	((cs == ST_M_ACK10) && scl_rising && (sda == IIC_ACK) && !rdwt);
+
+assign cmpl_trig =
+	(master && !arblose_trig && (cs != ST_IDLE) && (ns == ST_IDLE)) ||
+	(((cs == ST_S_DAT_R) || (cs == ST_S_DAT_T) || (cs == ST_S_ACK_T) || (cs == ST_S_ACK_R)) && (ns == ST_IDLE)) ||
+	((cs == ST_S_DAT_R) && (ns == ST_S_S));
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn)
+		dma_req <= 1'b0;
+	else if (dma_ack | iic_rst | !dma_en | !iic_en)
+		dma_req <= 1'b0;
+	else if (master && rdwt && !fifo_empty)
+		dma_req <= 1'b1;
+	else if (master && !rdwt && !fifo_full && (cs != ST_IDLE) &&
+				({{9-`ATCIIC100_INDEX_WIDTH{1'b0}}, fifo_entries} < datacnt))
+		dma_req	<= 1'b1;
+	else if (!master && !rdwt && !fifo_empty)
+		dma_req <= 1'b1;
+	else if (!master && rdwt && !fifo_full && ((cs == ST_S_DAT_T) || (cs == ST_S_ACK_T)) &&
+				({{9-`ATCIIC100_INDEX_WIDTH{1'b0}}, fifo_entries} < datacnt))
+		dma_req <= 1'b1;
+end
+
+assign	fifo_wr = (((cs == ST_S_DAT_R) && (ns == ST_S_ACK_R)) || ((cs == ST_M_DAT_R) && (ns == ST_M_ACK_R)) ||
+					(((cs == ST_S_ACK_R) || (cs == ST_M_ACK_R)) && !sr_ready)) && !fifo_full;
+assign	fifo_rd = (((cs != ST_S_DAT_T) && (ns == ST_S_DAT_T)) || ((cs != ST_M_DAT_T) && (ns == ST_M_DAT_T)) ||
+					(((cs == ST_S_DAT_T) || (cs == ST_M_DAT_T)) && !sr_ready)) && !fifo_empty;
+
+assign	fifo_wr_data = sr[7:0];
+
+assign	fifo_clr = (((cs == ST_IDLE) || (cs == ST_M_S) || (cs == ST_M_ACK7)) && (ns == ST_M_DAT_R)) ||
+					(((cs == ST_S_ACK7) || (cs == ST_S_ACK10)) && (ns == ST_S_DAT_R));
+
+assign timing_parameter_cntr_nx = (!iic_en) ? tpm
+                                            : ((timing_parameter_cntr == TPM_CNTR_ZERO) ? tpm
+											: (timing_parameter_cntr - 5'd1));
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn) begin
+		timing_parameter_cntr <= 5'd0;
+	end
+	else if (iic_en) begin
+		timing_parameter_cntr <= timing_parameter_cntr_nx;
+	end
+end
+
+assign timing_parameter_scaling_pulse_nx = (timing_parameter_cntr == TPM_CNTR_ZERO);
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn) begin
+		timing_parameter_scaling_pulse <= 1'b1;
+	end
+	else begin
+		timing_parameter_scaling_pulse <= timing_parameter_scaling_pulse_nx;
+	end
+end
+
+
+endmodule
+
+// Copyright (C) 2018, Andes Technology Corp. Confidential Proprietary
+
+`include "iic_config.v"
+
+module atciic100_fifo(
+		  clk,
+		  reset_n,
+		  wr_apb,
+		  wr_cntlr,
+		  rd_apb,
+		  rd_cntlr,
+		  clr_apb,
+		  clr_cntlr,
+		  wr_data_apb,
+		  wr_data_cntlr,
+		  rd_data,
+		  full,
+		  empty,
+		  half_full,
+		  half_empty,
+		  entries
+);
+
+input	clk;
+input	reset_n;
+input	wr_apb;
+input	wr_cntlr;
+input	rd_apb;
+input	rd_cntlr;
+input	clr_apb;
+input	clr_cntlr;
+input	[`ATCIIC100_DATA_WIDTH-1:0]		wr_data_apb;
+input	[`ATCIIC100_DATA_WIDTH-1:0]		wr_data_cntlr;
+
+output	full;
+output	empty;
+output	half_full;
+output	half_empty;
+output	[`ATCIIC100_INDEX_WIDTH-1:0]	entries;
+output	[`ATCIIC100_DATA_WIDTH-1:0]		rd_data;
+
+wire	wr;
+wire	rd;
+wire	fifo_clr;
+wire	half_full;
+wire	half_empty;
+wire	[`ATCIIC100_DATA_WIDTH-1:0] 	wr_data;
+wire	[`ATCIIC100_INDEX_WIDTH-1:0]	entries;
+wire	[`ATCIIC100_INDEX_WIDTH-1:0]	wr_ptr;
+wire	[`ATCIIC100_INDEX_WIDTH-1:0]	rd_ptr;
+
+localparam [`ATCIIC100_INDEX_WIDTH-1:0]	HALF_NUM = {2'b01, {(`ATCIIC100_INDEX_WIDTH - 2){1'b0}}};
+
+
+assign	wr			= wr_apb | wr_cntlr;
+assign	wr_data		= wr_cntlr ? wr_data_cntlr : wr_data_apb;
+assign	rd			= rd_apb | rd_cntlr;
+assign	fifo_clr	= clr_apb | clr_cntlr;
+
+//assign	entries		= wr_ptr - rd_ptr;
+assign	half_full	= entries >= HALF_NUM;
+assign	half_empty	= entries <= HALF_NUM;
+
+//defparam u_nds_sync_fifo.DATA_WIDTH = `ATCIIC100_DATA_WIDTH;
+//defparam u_nds_sync_fifo.FIFO_DEPTH = 1 << (`ATCIIC100_INDEX_WIDTH - 1);
+//defparam u_nds_sync_fifo.POINTER_INDEX_WIDTH = `ATCIIC100_INDEX_WIDTH;
+//nds_sync_fifo_clr u_nds_sync_fifo (
+//	.reset_n	(reset_n),
+//	.clk		(clk),
+//	.wr			(wr),
+//	.wr_data	(wr_data),
+//	.rd			(rd),
+//	.rd_data	(rd_data),
+//	.empty		(empty),
+//	.full		(full),
+//	.wr_ptr		(wr_ptr),
+//	.rd_ptr		(rd_ptr),
+//	.fifo_clr	(fifo_clr)
+//);
+
+//async_fifo #(
+//       .DSIZE ( `ATCIIC100_DATA_WIDTH)
+//      ,.ASIZE ( `ATCIIC100_INDEX_WIDTH)
+//      ,.AEMPT ( 1 )
+//      ,.AFULL ( 32)
+//)async_fifo
+//(
+//       .Q          (rd_data)
+//      ,.Full       (full)
+//      ,.Empty      (empty)
+//      ,.AlmostEmpty()
+//      ,.AlmostFull ()
+//      ,.RdDataNum  ()
+//      ,.WrDataNum  (entries)
+//      ,.Data       (wr_data)
+//      ,.WrEn       (wr)
+//      ,.WrClock    (clk)
+//      ,.WPReset    ((~reset_n)|fifo_clr)
+//      ,.RdEn       (rd)
+//      ,.RdClock    (clk)
+//      ,.RPReset    ((~reset_n)|fifo_clr)
+//      );
+
+	fifo_sc_i2c_tx u_fifo_sc_i2c_tx(
+		.Data(wr_data), //input [7:0] Data
+		.Clk(clk), //input Clk
+		.WrEn(wr), //input WrEn
+		.RdEn(rd), //input RdEn
+		.Reset((~reset_n)|fifo_clr), //input Reset
+		.Wnum(entries), //output [9:0] Wnum
+		.Q(rd_data), //output [7:0] Q
+		.Empty(empty), //output Empty
+		.Full(full) //output Full
+	);
+
+endmodule
+
+// Copyright (C) 2018, Andes Technology Corp. Confidential Proprietary
+
+module atciic100_gsf(
+		  pclk,
+		  presetn,
+		  t_sp,
+		  I,
+		  timing_parameter_scaling_pulse,
+		  O,
+		  rising_edge,
+		  falling_edge
+);
+
+input			pclk;
+input			presetn;
+input		[2:0]	t_sp;
+input			I;
+input			timing_parameter_scaling_pulse;
+output			O;
+output			rising_edge;
+output			falling_edge;
+
+reg			I_sync;
+wire			toggle;
+
+reg 			O;
+reg		[2:0]	cntr;
+
+assign	toggle       = (cntr == t_sp) & (O != I_sync);
+assign	rising_edge  = toggle & ~O & timing_parameter_scaling_pulse;
+assign	falling_edge = toggle &  O & timing_parameter_scaling_pulse;
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn) begin
+        I_sync <= 1'b0;
+    end
+    else begin
+        I_sync <= I;
+    end
+end
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn) begin
+		O <= 1'b1;
+	end
+	else if (timing_parameter_scaling_pulse) begin
+		if (toggle) begin
+			O <= ~O;
+		end
+	end
+end
+
+always @(posedge pclk or negedge presetn) begin
+	if (!presetn) begin
+		cntr <= 3'b0;
+	end
+	else if (timing_parameter_scaling_pulse) begin
+		if (cntr >= t_sp) begin
+			cntr <= 3'b0;
+		end
+		else if (O != I_sync) begin
+			cntr <= cntr + 3'b1;
+		end
+		else begin
+			cntr <= 3'b0;
+		end
+	end
+end
+
+
+//defparam u_nds_sync_l2l.RESET_VALUE = 1'b1;
+//nds_sync_l2l u_nds_sync_l2l (
+//	.b_reset_n			(presetn),
+//	.b_clk				(pclk),
+//	.a_signal			(I),
+//	.b_signal			(I_sync),
+//	.b_signal_rising_edge_pulse	(),
+//	.b_signal_falling_edge_pulse	(),
+//	.b_signal_edge_pulse		()
+//);
+
+endmodule

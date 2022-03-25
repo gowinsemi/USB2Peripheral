@@ -1,0 +1,56 @@
+@W: CG1337 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v":97:7:97:10|Net rden is not declared.
+@W: CG1337 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v":97:7:97:10|Net rden is not declared.
+@W: CG1340 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\par2iis_ver2.v":193:0:193:5|Index into variable pdata_I could be out of range ; a simulation mismatch is possible.
+@W: CG133 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\par2iis_ver2.v":134:4:134:13|Object valid_flag is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v":48:24:48:38|Object rxbuf_raddr_cnt is declared but not assigned. Either assign a value or remove the declaration.
+@W: CS263 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":264:25:264:30|Port-width mismatch for port DATAOUT. The port definition is 16 bits, but the actual port connection bit width is 8. Adjust either the definition or the instantiation of this port.
+@W: CG360 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":35:12:35:19|Removing wire SUSPENDM, as there is no assignment to it.
+@W: CG360 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":38:12:38:16|Removing wire RESET, as there is no assignment to it.
+@W: CG133 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":72:12:72:24|Object PHY_TXREADY_d is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG360 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":73:12:73:24|Removing wire PHY_TXREADY_r, as there is no assignment to it.
+@W: CL156 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":321:21:321:23|*Input XIN to expression [instance] has undriven bits; assigning undriven bits to 0.  Simulation mismatch possible. Assign all bits of the input.
+@W: CL260 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v":214:0:214:5|Pruning register bit 8 of rxbuf_raddr[9:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\par2iis_ver2.v":161:0:161:5|Pruning register bit 5 of bck_cnt[5:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CD434 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":918:39:918:52|Signal usbi_highspeed in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD638 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":626:11:626:15|Signal rxbuf is undriven. Either assign the signal a value or remove the signal declaration.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":444:40:444:40|Pruning unused register i(31 downto 30). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":456:40:456:40|Pruning unused register i_L0(31 downto 30). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":468:40:468:40|Pruning unused register i_L1(31 downto 30). Make sure that there are no unused intermediate registers.
+@W: CL279 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":233:11:233:20|Pruning register bits 7 to 1 of s_sendbyte(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":390:15:390:15|Pruning unused register i(31 downto 28). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":408:11:408:11|Pruning unused register i_L0(31 downto 28). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":219:10:219:18|Pruning unused register v_dataout(7 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":220:10:220:18|Pruning unused register v_txvalid. Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":221:10:221:18|Pruning unused register v_crc_upd. Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":222:10:222:19|Pruning unused register v_crc_data(7 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":223:17:223:26|Pruning unused register v_crc5_new(4 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":224:17:224:27|Pruning unused register v_crc16_new(15 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":136:17:136:27|Pruning unused register v_clrtimer1. Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":137:17:137:27|Pruning unused register v_clrtimer2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":1016:17:1016:28|Pruning unused register v_max_txsize(9 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":1017:17:1017:31|Pruning unused register v_rxbuf_len_lim(9 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":1018:17:1018:32|Pruning unused register v_rxbuf_tmp_head(9 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":1019:17:1019:31|Pruning unused register v_rxbuf_pktroom. Make sure that there are no unused intermediate registers.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(0) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(1) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(2) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(3) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(4) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(5) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(6) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(7) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL260 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":709:11:709:20|Pruning register bit 2 of s_halt_out(1 to 2). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL249 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":97:11:97:17|Initial value is not supported on state machine s_state
+@W: CL190 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":119:11:119:22|Optimizing register bit s_xcvrselect to a constant 1. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":107:11:107:21|Optimizing register bit s_highspeed to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":104:11:104:20|Optimizing register bit s_chirpcnt(0) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":104:11:104:20|Optimizing register bit s_chirpcnt(1) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":104:11:104:20|Optimizing register bit s_chirpcnt(2) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":107:11:107:21|Pruning unused register s_highspeed. Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":104:11:104:20|Pruning unused register s_chirpcnt(2 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":119:11:119:22|Pruning unused register s_xcvrselect. Make sure that there are no unused intermediate registers.
+@W: CL249 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":120:11:120:17|Initial value is not supported on state machine s_state
+@W: CL260 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":222:11:222:19|Pruning register bit 1 of s_sendpid(3 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL249 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":208:11:208:17|Initial value is not supported on state machine s_state
+@W: CL249 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":695:11:695:17|Initial value is not supported on state machine s_state
+

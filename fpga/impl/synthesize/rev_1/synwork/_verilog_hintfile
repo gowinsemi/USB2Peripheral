@@ -1,0 +1,166 @@
+%%% protect protected_file
+#OPTIONS:"|-bldtbl|-prodtype|synplify_pro|-primux|-fixsmult|-sdff_counter|-nram|-divnmod|-nostructver|-gowin|-infer_seqShift|-encrypt|-pro|-lite|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-ignore_undefined_lib|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work"
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\bin64\\c_vhdl.exe":1589223566
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\lib\\vhd\\location.map":1589238678
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\lib\\vhd\\std.vhd":1589223772
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\lib\\vhd\\snps_haps_pkg.vhd":1589223772
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\lib\\vhd\\std1164.vhd":1589223772
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\lib\\vhd\\numeric.vhd":1589223772
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\lib\\vhd\\umr_capim.vhd":1589223772
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\lib\\vhd\\arith.vhd":1589223772
+#CUR:"C:\\Gowin\\1.9.5\\19502_40903\\Gowin\\Gowin_V1.9.5.02Beta\\SynplifyPro\\lib\\vhd\\unsigned.vhd":1589223772
+#CUR:"E:\\IP_PROJECT\\USB\\USB2IIS\\test_0525\\usb2iis\\only_rx\\src\\usb_control.vhd":1587089042
+#CUR:"E:\\IP_PROJECT\\USB\\USB2IIS\\test_0525\\usb2iis\\only_rx\\src\\usb_ini.vhd":1587089059
+#CUR:"E:\\IP_PROJECT\\USB\\USB2IIS\\test_0525\\usb2iis\\only_rx\\src\\usb_packet.vhd":1587089080
+#CUR:"E:\\IP_PROJECT\\USB\\USB2IIS\\test_0525\\usb2iis\\only_rx\\src\\usb_pkg.vhd":1587089097
+#CUR:"E:\\IP_PROJECT\\USB\\USB2IIS\\test_0525\\usb2iis\\only_rx\\src\\usb_transact.vhd":1587089224
+#CUR:"E:\\IP_PROJECT\\USB\\USB2IIS\\test_0525\\usb2iis\\only_rx\\src\\usb_serial.vhd":1587089116
+@E8lFkRDCk_#L#HCsNDD
+HNLssI$RF
+s	bNNslCC0s Reh)7mQ#7R0D8_FOoH_OPC0
+FsbNNslCC0s)RumB7zaRQ7#_08DHFoOC_POs0F
+sbNN0lCCesR Q)1mBhA70R#8F_Do_HOP0COFbs
+NlsNCs0CRhe 71m)a#)R0MsHoN
+bsCNl0RCsu7)mz1Baa#)R0MsHoN
+bsCNl0RCs1Q )qap1)0R#soHM
+sbNN0lCC]sR1u1zuam)RFLFDMCN
+sbNN0lCC1sR upwm)W  L7RFCFDNbM
+NlsNCs0CRA)XzQw1ZA _QRa1HCM0o
+CsbNNslCC0sXRaA1zwQ_Z A1QaR0HMCsoC
+bHMkB0Rp-iR4M
+HbRk0)  1a4R-
+0FkbRk0z)1A1-aR4k
+F00bkRt]Q] 1u -7R4k
+F00bkR11zu7 hR
+-4Fbk0km0RhhpQ 4R-
+0FkbRk0)qXep4R-
+0FkbRk0)qX7a4R-
+bHMk)0RXY)7R
+-4Fbk0k)0RXhp R
+-4HkMb0XRaeRqp-H4
+M0bkR7aXq-aR4k
+F00bkR#0C04R-
+0FkbRk0a7X)Y4R-
+0FkbRk0amX)m-vR4M
+HbRk0amXB)-iR4M
+HbRk0u_]Y7qqaQ-hR4k
+F00bkRYu]_a7qqamzR
+-4Fbk0ku0R]aY_XpeqQ-7R4M
+HbRk0u_]Ya X)qR7Y-H4
+M0bkRYu]_q)XBeaQ 4R-
+bHMku0R])Y_XpeqQ-7R4M
+HbRk0u_]Y))X )Rm)-H4
+M0bkRYu]_hpQ q1aa- R4k
+F00bkRYu]_vmumR7 -F4
+kk0b0]RuYB_Xe )1pa BR
+-4Fbk0ku0R]aY_ 1)v Bp a4R-
+0FkbRk0u_]Y)  1a4R-
+0FkbRk0Q_Q1)zXAw)w _ W)h4R-
+0FkbRk0Q_Q1)zXAw)w _a7qq4R-
+0FkbRk0Q_Q1Wh) 74R-
+8CMlkF8DlC
+FD8kC#RkLs_0NNM#OD0
+HNLssI$RF
+s	bNNslCC0s1R]1uzumR)aLDFFC
+NMHkMb0pRBi4R-
+bHMk)0R a1 R
+-4Fbk0ka0R_RQh-F4
+kk0b0_RamRza-F4
+kk0b0_Ra1z au4R-
+0FkbRk0aQ_uh-tR4k
+F00bkRwa_Q-hR4M
+HbRk0a7_q7-)R4k
+F00bkR a_ha7uR
+-4HkMb0_RahRqi-H4
+M0bkR1a_apqpR
+-4HkMb0_RahaY R
+-4HkMb0_Ra17 hR
+-4HkMb0_RaQh1YB4R-
+0FkbRk0a1_mYRhB-F4
+kk0b0_Ra)7X)Y4R-
+0FkbRk0aX_)7Rqa-F4
+kk0b0_Raa7X)Y4R-
+bHMka0R_7aXq-aR4M
+HbRk0QQ_]tu]1 R 7-H4
+M0bkR)u_XaqBR
+-4HkMb0_Ru)7X)Y4R-
+bHMku0R_w)XQ-hR4M
+HbRk0uX_)7Rqa-F4
+kk0b0_RuaBXqa4R-
+bHMku0R_)aX7-YR4k
+F00bkRau_Xa7qR
+-4ClM8FD8kCF
+l8CkDRLk#_ObN	
+C0DsHLNRs$I	Fs
+bHMkB0Rp4iR
+bHMk)0R a1 RH4
+M0bkRBu_]uQ)i
+R4Fbk0ku0R_q)XB4aR
+0FkbRk0uX_))R7Y4k
+F00bkR)u_XhwQRF4
+kk0b0_Ru)qX7a
+RUHkMb0_RuaBXqa
+R4Fbk0ku0R_)aX74YR
+bHMku0R_7aXqUaR
+bHMku0R]7Y_qQaqh
+RUFbk0ku0R]7Y_qmaqzUaR
+0FkbRk0u_]YaqXepRQ74M
+HbRk0u_]Ya X)qR7Y4M
+HbRk0u_]Y)BXqa QeRH4
+M0bkRYu]_e)Xq7pQRH4
+M0bkRYu]_ )X)))mRC4
+MF8l8CkD
+8lFkRDCk_#LH0MH
+LDHs$NsRsIF	N
+bsCNl0RCs]z11u)umaFRLFNDCMM
+HbRk0BRpi-H4
+M0bkR1)  -aR4k
+F00bkRzQ_11A)a4R-
+0FkbRk0QQ_]tu]1 R 7-F4
+kk0b0_RQ1uz1 Rh7-F4
+kk0b0_RuB)]Qu-iR4k
+F00bkRYu]_1)  -aR4M
+HbRk0u_]Yp Qh1aaq 4R-
+0FkbRk0u_]Ymmuv7- R4k
+F00bkRYu]_eXB)p1  RBa-F4
+kk0b0]RuY _a) v1pa BR
+-4ClM8FD8kCF
+l8CkDRLk#_MOF0DsF
+LDHs$NsRsIF	N
+bsCNl0RCsh7 huHaRMo0CCHs
+M0bkRiBpR
+-4HkMb0 R)1R a-F4
+kk0b0_RBq)77R
+-4Fbk0kB0R_hBmw-7R4k
+F00bkRBB_ph)QR
+-4Fbk0kB0R_)BpmRza-H4
+M0bkR]B_phaQR
+-4HkMb0_RB]mpaz-aR4k
+F00bkR1B_]Qpah4R-
+0FkbRk0B]_1pzama4R-
+0FkbRk0B1_7B1AzY4R-
+0FkbRk0B1_7BR)7-F4
+kk0b0_RB7a1BY-uR4k
+F00bkR7B_1hBQX4R-
+0FkbRk0B1_7BwmwR
+-4HkMb0_RB7p1B -hR4M
+HbRk0B _1pmwuW  )74R-
+bHMka0R_RQh-H4
+M0bkRma_z-aR4M
+HbRk0a _1aRzu-H4
+M0bkRua_QRht-H4
+M0bkRwa_Q-hR4k
+F00bkRha_q-iR4k
+F00bkR1a_apqpR
+-4Fbk0ka0R_ hYa4R-
+0FkbRk0a _1h-7R4k
+F00bkRQa_1BYhR
+-4HkMb0_Ramh1YB4R-
+bHMka0R_))X7-YR4M
+HbRk0aX_)7Rqa-H4
+M0bkRaa_XY)7R
+-4Fbk0ka0R_7aXq-aR4M
+C88lFk
+DC
+
+@ 

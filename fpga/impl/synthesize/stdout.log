@@ -1,0 +1,22 @@
+
+Starting:    C:\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro\bin64\mbin\synbatch.exe
+Install:     C:\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro
+Hostname:    WINSON-PC
+Date:        Tue Sep  1 14:57:58 2020
+Version:     Q-2020.03G-Beta1
+
+Arguments:   -product synplify_pro -batch -licensetype synplifypro_gowin F:/Winson/USB/zhuzhiliang/IIS_branch/USB2IIS/only_rx/impl/synthesize/only_rx.prj
+ProductType: synplify_pro
+
+Feature has expired.
+Feature:       synplifypro_gowin
+License path:  E:\ISE\license all.lic;
+FlexNet Licensing error:-10,234
+
+
+Host ID:  001A7DDA7111
+Please contact support at https://solvnetplus.synopsys.com/ManageCase?ccf=1
+
+
+Running in Vendor Mode
+

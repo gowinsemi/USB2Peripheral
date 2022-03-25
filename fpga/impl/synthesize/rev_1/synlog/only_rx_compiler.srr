@@ -1,0 +1,378 @@
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03G-Beta1
+Install: C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro
+OS: Windows 6.1
+
+Hostname: GW-SW-049
+
+Implementation : rev_1
+Synopsys HDL Compiler, Version comp202003syn, Build 137R, Built May 11 2020 09:06:37, @
+
+@N|Running in 64-bit mode
+###########################################################[
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03G-Beta1
+Install: C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro
+OS: Windows 6.1
+
+Hostname: GW-SW-049
+
+Implementation : rev_1
+Synopsys VHDL Compiler, Version comp202003syn, Build 137R, Built May 11 2020 09:06:37, @
+
+@N|Running in 64-bit mode
+@N:"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":67:7:67:16|Top entity is set to usb_serial.
+VHDL syntax check successful!
+
+At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 88MB peak: 88MB)
+
+
+Process completed successfully.
+# Wed Jun 10 14:56:55 2020
+
+###########################################################]
+###########################################################[
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03G-Beta1
+Install: C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro
+OS: Windows 6.1
+
+Hostname: GW-SW-049
+
+Implementation : rev_1
+Synopsys Verilog Compiler, Version comp202003syn, Build 137R, Built May 11 2020 09:06:37, @
+
+@N|Running in 64-bit mode
+@N: CG1349 :	| Running Verilog Compiler in System Verilog mode
+
+@N: CG1350 :	| Running Verilog Compiler in Multiple File Compilation Unit mode
+
+@I::"C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro\lib\generic\gw1ns.v" (library work)
+@I::"C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro\lib\vlog\hypermods.v" (library __hyper__lib__)
+@I::"C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro\lib\vlog\umr_capim.v" (library snps_haps)
+@I::"C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro\lib\vlog\scemi_objects.v" (library snps_haps)
+@I::"C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro\lib\vlog\scemi_pipes.svh" (library snps_haps)
+@I::"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\USB_TOP.v" (library work)
+@I:"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\USB_TOP.v":"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\define.v" (library work)
+@I:"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\USB_TOP.v":"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\parameter.v" (library work)
+@I::"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v" (library work)
+@I::"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\par2iis_ver2.v" (library work)
+@I::"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v" (library work)
+@W: CG1337 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v":97:7:97:10|Net rden is not declared.
+Verilog syntax check successful!
+
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 90MB peak: 90MB)
+
+
+Process completed successfully.
+# Wed Jun 10 14:56:55 2020
+
+###########################################################]
+###########################################################[
+@N: CG1349 :	| Running Verilog Compiler in System Verilog mode
+
+@N: CG1350 :	| Running Verilog Compiler in Multiple File Compilation Unit mode
+
+@I::"C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro\lib\generic\gw1ns.v" (library work)
+@I::"C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro\lib\vlog\hypermods.v" (library __hyper__lib__)
+@I::"C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro\lib\vlog\umr_capim.v" (library snps_haps)
+@I::"C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro\lib\vlog\scemi_objects.v" (library snps_haps)
+@I::"C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro\lib\vlog\scemi_pipes.svh" (library snps_haps)
+@I::"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\USB_TOP.v" (library work)
+@I:"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\USB_TOP.v":"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\define.v" (library work)
+@I:"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\USB_TOP.v":"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\parameter.v" (library work)
+@I::"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v" (library work)
+@I::"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\par2iis_ver2.v" (library work)
+@I::"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v" (library work)
+@W: CG1337 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v":97:7:97:10|Net rden is not declared.
+Verilog syntax check successful!
+File E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\par2iis_ver2.v changed - recompiling
+File E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v changed - recompiling
+@N: CG364 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\parameter.v":3:8:3:16|Synthesizing module work_E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\USB_TOP.v_unit in library work.
+@N: CG364 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\par2iis_ver2.v":20:7:20:13|Synthesizing module par2i2s in library work.
+@W: CG1340 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\par2iis_ver2.v":193:0:193:5|Index into variable pdata_I could be out of range ; a simulation mismatch is possible.
+@W: CG133 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\par2iis_ver2.v":134:4:134:13|Object valid_flag is declared but not assigned. Either assign a value or remove the declaration.
+Running optimization stage 1 on par2i2s .......
+@N: CG364 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v":1:7:1:16|Synthesizing module serial2iis in library work.
+@W: CG133 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v":48:24:48:38|Object rxbuf_raddr_cnt is declared but not assigned. Either assign a value or remove the declaration.
+Running optimization stage 1 on serial2iis .......
+@N: CL134 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v":242:0:242:5|Found RAM rxbuffer, depth=1024, width=8
+@N: CG364 :"C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro\lib\generic\gw1ns.v":2699:7:2699:15|Synthesizing module USB20_PHY in library work.
+Running optimization stage 1 on USB20_PHY .......
+@N: CG364 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":4:40:4:40|Synthesizing module \~usb_1p1.USB_TOP  in library work.
+
+	VENDORID=16'b0000100010111011
+	PRODUCTID=16'b0010011111000110
+	VERSIONBCD=16'b0000000100000000
+	RXBUFSIZE_BITS=32'b00000000000000000000000000001010
+	TXBUFSIZE_BITS=32'b00000000000000000000000000001010
+   Generated name = \~usb_1p1.USB_TOP _2235_10182_256_10s_10s
+@N: CG179 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":78:18:78:24|Removing redundant assignment.
+@N: CG794 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":226:8:226:21|Using module usb_serial from library work
+@W: CS263 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":264:25:264:30|Port-width mismatch for port DATAOUT. The port definition is 16 bits, but the actual port connection bit width is 8. Adjust either the definition or the instantiation of this port.
+@W: CG360 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":35:12:35:19|Removing wire SUSPENDM, as there is no assignment to it.
+@W: CG360 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":38:12:38:16|Removing wire RESET, as there is no assignment to it.
+@W: CG133 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":72:12:72:24|Object PHY_TXREADY_d is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG360 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":73:12:73:24|Removing wire PHY_TXREADY_r, as there is no assignment to it.
+Running optimization stage 1 on \~usb_1p1.USB_TOP _2235_10182_256_10s_10s .......
+@N: CG364 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\USB_TOP.v":23:23:23:23|Synthesizing module USB_TOP in library work.
+Running optimization stage 1 on USB_TOP .......
+Running optimization stage 2 on USB_TOP .......
+Running optimization stage 2 on \~usb_1p1.USB_TOP _2235_10182_256_10s_10s .......
+@W: CL156 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":321:21:321:23|*Input XIN to expression [instance] has undriven bits; assigning undriven bits to 0.  Simulation mismatch possible. Assign all bits of the input.
+Running optimization stage 2 on USB20_PHY .......
+Running optimization stage 2 on serial2iis .......
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v":214:0:214:5|Register bit rxbuf_raddr[8] is always 0.
+@W: CL260 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v":214:0:214:5|Pruning register bit 8 of rxbuf_raddr[9:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v":103:0:103:5|Trying to extract state machine for register c_status.
+Extracted state machine for register c_status
+State machine has 7 reachable states with original encodings of:
+   000
+   001
+   010
+   011
+   100
+   101
+   110
+Running optimization stage 2 on par2i2s .......
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\par2iis_ver2.v":161:0:161:5|Register bit bck_cnt[5] is always 0.
+@W: CL260 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\par2iis_ver2.v":161:0:161:5|Pruning register bit 5 of bck_cnt[5:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+
+For a summary of runtime and memory usage per design unit, please see file:
+==========================================================
+@L: E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\impl\synthesize\rev_1\synwork\layer0.rt.csv
+
+
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 94MB peak: 95MB)
+
+
+Process completed successfully.
+# Wed Jun 10 14:56:56 2020
+
+###########################################################]
+###########################################################[
+@N:"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":67:7:67:16|Top entity is set to usb_serial.
+File E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd changed - recompiling
+File E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd changed - recompiling
+VHDL syntax check successful!
+@N: Setting default value for generic vendorid to "0000100010111011";
+@N: Setting default value for generic productid to "0010011111000110";
+@N: Setting default value for generic versionbcd to "0000000100000000";
+@N: Setting default value for generic hssupport to false;
+@N: Setting default value for generic selfpowered to false;
+@N: Setting default value for generic rxbufsize_bits to 10;
+@N: Setting default value for generic txbufsize_bits to 10;
+@N: CD630 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":67:7:67:16|Synthesizing work.usb_serial.usb_serial_arch.
+@N: CD231 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":692:17:692:18|Using onehot encoding for type t_state. For example, enumeration st_idle is mapped to "10000000".
+@W: CD434 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":918:39:918:52|Signal usbi_highspeed in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD638 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":626:11:626:15|Signal rxbuf is undriven. Either assign the signal a value or remove the signal declaration.
+@N: CD630 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":99:7:99:17|Synthesizing work.usb_control.usb_control_arch.
+@N: CD231 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":222:17:222:18|Using onehot encoding for type t_state. For example, enumeration st_idle is mapped to "10000000000".
+Post processing for work.usb_control.usb_control_arch
+Running optimization stage 1 on usb_control .......
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":444:40:444:40|Pruning unused register i(31 downto 30). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":456:40:456:40|Pruning unused register i_L0(31 downto 30). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":468:40:468:40|Pruning unused register i_L1(31 downto 30). Make sure that there are no unused intermediate registers.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":233:11:233:20|Register bit s_sendbyte(1) is always 0.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":233:11:233:20|Register bit s_sendbyte(2) is always 0.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":233:11:233:20|Register bit s_sendbyte(3) is always 0.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":233:11:233:20|Register bit s_sendbyte(4) is always 0.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":233:11:233:20|Register bit s_sendbyte(5) is always 0.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":233:11:233:20|Register bit s_sendbyte(6) is always 0.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":233:11:233:20|Register bit s_sendbyte(7) is always 0.
+@W: CL279 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":233:11:233:20|Pruning register bits 7 to 1 of s_sendbyte(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@N: CD630 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":90:7:90:18|Synthesizing work.usb_transact.usb_transact_arch.
+@N: CD231 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":201:17:201:18|Using onehot encoding for type t_state. For example, enumeration st_idle is mapped to "10000000000000".
+Post processing for work.usb_transact.usb_transact_arch
+Running optimization stage 1 on usb_transact .......
+@N: CD630 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":56:7:56:16|Synthesizing work.usb_packet.usb_packet_arch.
+@N: CD231 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":116:17:116:18|Using onehot encoding for type t_state. For example, enumeration st_none is mapped to "1000000000".
+Post processing for work.usb_packet.usb_packet_arch
+Running optimization stage 1 on usb_packet .......
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":390:15:390:15|Pruning unused register i(31 downto 28). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":408:11:408:11|Pruning unused register i_L0(31 downto 28). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":219:10:219:18|Pruning unused register v_dataout(7 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":220:10:220:18|Pruning unused register v_txvalid. Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":221:10:221:18|Pruning unused register v_crc_upd. Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":222:10:222:19|Pruning unused register v_crc_data(7 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":223:17:223:26|Pruning unused register v_crc5_new(4 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":224:17:224:27|Pruning unused register v_crc16_new(15 downto 0). Make sure that there are no unused intermediate registers.
+@N: CD630 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":24:7:24:14|Synthesizing work.usb_init.usb_init_arch.
+@N: CD231 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":94:17:94:18|Using onehot encoding for type t_state. For example, enumeration st_init is mapped to "100000000".
+Post processing for work.usb_init.usb_init_arch
+Running optimization stage 1 on usb_init .......
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":136:17:136:27|Pruning unused register v_clrtimer1. Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":137:17:137:27|Pruning unused register v_clrtimer2. Make sure that there are no unused intermediate registers.
+Post processing for work.usb_serial.usb_serial_arch
+Running optimization stage 1 on work_usb_serial_usb_serial_arch_0000100010111011_0010011111000110_0000000100000000_BurrBrown from Texas Instruments_USB AUDIO    DAC_false_false_10_10_1_VENDORIDPRODUCTIDVERSIONBCDHSSUPPORTSELFPOWEREDRXBUFSIZE_BITSTXBUFSIZE_BITS .......
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":1016:17:1016:28|Pruning unused register v_max_txsize(9 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":1017:17:1017:31|Pruning unused register v_rxbuf_len_lim(9 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":1018:17:1018:32|Pruning unused register v_rxbuf_tmp_head(9 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":1019:17:1019:31|Pruning unused register v_rxbuf_pktroom. Make sure that there are no unused intermediate registers.
+@N: CL134 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":630:11:630:15|Found RAM txbuf, depth=1024, width=8
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(0) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(1) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(2) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(3) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(4) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(5) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(6) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":627:11:627:20|All reachable assignments to rxbuf_rdat(7) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":710:11:710:16|Register bit s_nyet is always 0.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":709:11:709:20|Register bit s_halt_out(2) is always 0.
+@W: CL260 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":709:11:709:20|Pruning register bit 2 of s_halt_out(1 to 2). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+Running optimization stage 2 on usb_init_false .......
+@N: CL201 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":97:11:97:17|Trying to extract state machine for register s_state.
+Extracted state machine for register s_state
+State machine has 4 reachable states with original encodings of:
+   000000001
+   000000010
+   000000100
+   000001000
+@W: CL249 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":97:11:97:17|Initial value is not supported on state machine s_state
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":121:11:121:18|Register bit s_chirpk is always 0.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":120:11:120:22|Register bit s_termselect is always 1.
+@W: CL190 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":119:11:119:22|Optimizing register bit s_xcvrselect to a constant 1. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":107:11:107:21|Optimizing register bit s_highspeed to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":104:11:104:20|Optimizing register bit s_chirpcnt(0) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":104:11:104:20|Optimizing register bit s_chirpcnt(1) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL190 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":104:11:104:20|Optimizing register bit s_chirpcnt(2) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":107:11:107:21|Pruning unused register s_highspeed. Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":104:11:104:20|Pruning unused register s_chirpcnt(2 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_ini.vhd":119:11:119:22|Pruning unused register s_xcvrselect. Make sure that there are no unused intermediate registers.
+Running optimization stage 2 on usb_packet .......
+@N: CL201 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":120:11:120:17|Trying to extract state machine for register s_state.
+Extracted state machine for register s_state
+State machine has 10 reachable states with original encodings of:
+   0000000001
+   0000000010
+   0000000100
+   0000001000
+   0000010000
+   0000100000
+   0001000000
+   0010000000
+   0100000000
+   1000000000
+@W: CL249 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_packet.vhd":120:11:120:17|Initial value is not supported on state machine s_state
+Running optimization stage 2 on usb_transact_false .......
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":222:11:222:19|Register bit s_sendpid(1) is always 1.
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":215:11:215:16|Register bit s_ping is always 0.
+@W: CL260 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":222:11:222:19|Pruning register bit 1 of s_sendpid(3 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":208:11:208:17|Trying to extract state machine for register s_state.
+Extracted state machine for register s_state
+State machine has 14 reachable states with original encodings of:
+   00000000000001
+   00000000000010
+   00000000000100
+   00000000001000
+   00000000010000
+   00000000100000
+   00000001000000
+   00000010000000
+   00000100000000
+   00001000000000
+   00010000000000
+   00100000000000
+   01000000000000
+   10000000000000
+@W: CL249 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":208:11:208:17|Initial value is not supported on state machine s_state
+@N: CL159 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":133:8:133:13|Input T_NYET is unused.
+@N: CL159 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_transact.vhd":157:8:157:18|Input I_HIGHSPEED is unused.
+Running optimization stage 2 on usb_control_2 .......
+@N: CL201 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":226:11:226:17|Trying to extract state machine for register s_state.
+@N: CL159 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":165:8:165:12|Input T_OUT is unused.
+@N: CL159 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":171:8:171:13|Input T_PING is unused.
+@N: CL159 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_control.vhd":192:8:192:14|Input T_OSYNC is unused.
+Running optimization stage 2 on work_usb_serial_usb_serial_arch_0000100010111011_0010011111000110_0000000100000000_BurrBrown from Texas Instruments_USB AUDIO    DAC_false_false_10_10_1_VENDORIDPRODUCTIDVERSIONBCDHSSUPPORTSELFPOWEREDRXBUFSIZE_BITSTXBUFSIZE_BITS .......
+@N: CL201 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":695:11:695:17|Trying to extract state machine for register s_state.
+Extracted state machine for register s_state
+State machine has 8 reachable states with original encodings of:
+   00000001
+   00000010
+   00000100
+   00001000
+   00010000
+   00100000
+   01000000
+   10000000
+@W: CL249 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\usb_serial.vhd":695:11:695:17|Initial value is not supported on state machine s_state
+
+For a summary of runtime and memory usage per design unit, please see file:
+==========================================================
+@L: E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\impl\synthesize\rev_1\synwork\layer1.rt.csv
+
+
+At c_vhdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 105MB peak: 110MB)
+
+
+Process completed successfully.
+# Wed Jun 10 14:56:58 2020
+
+###########################################################]
+###########################################################[
+
+Copyright (C) 1994-2020 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: Q-2020.03G-Beta1
+Install: C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro
+OS: Windows 6.1
+
+Hostname: GW-SW-049
+
+Implementation : rev_1
+Synopsys Synopsys Netlist Linker, Version comp202003syn, Build 137R, Built May 11 2020 09:06:37, @
+
+@N|Running in 64-bit mode
+
+=======================================================================================
+For a summary of linker messages for components that did not bind, please see log file:
+@L: E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\impl\synthesize\rev_1\synwork\only_rx_comp.linkerlog
+=======================================================================================
+
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 91MB peak: 91MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Wed Jun 10 14:56:58 2020
+
+###########################################################]
+
+For a summary of runtime and memory usage for all design units, please see file:
+==========================================================
+@L: E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\impl\synthesize\rev_1\synwork\only_rx_comp.rt.csv
+
+@END
+
+At c_hdl Exit (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 23MB peak: 23MB)
+
+Process took 0h:00m:03s realtime, 0h:00m:02s cputime
+
+Process completed successfully.
+# Wed Jun 10 14:56:58 2020
+
+###########################################################]

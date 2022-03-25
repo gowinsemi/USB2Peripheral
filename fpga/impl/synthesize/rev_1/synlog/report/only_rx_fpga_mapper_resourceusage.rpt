@@ -1,0 +1,41 @@
+---------------------------------------
+Resource Usage Report for USB_TOP 
+
+Mapping to part: gw1ns_2clqfp144-5
+Cell usage:
+ALU             139 uses
+DFF             38 uses
+DFFC            25 uses
+DFFE            51 uses
+DFFR            107 uses
+DFFRE           121 uses
+DFFS            21 uses
+DFFSE           29 uses
+GSR             1 use
+INV             5 uses
+MUX2_LUT5       4 uses
+MUX2_LUT6       2 uses
+MUX2_LUT7       1 use
+SDP             2 uses
+USB20_PHY       1 use
+pROM            1 use
+LUT2            150 uses
+LUT3            224 uses
+LUT4            444 uses
+
+I/O ports: 43
+I/O primitives: 43
+IBUF           10 uses
+OBUF           33 uses
+
+I/O Register bits:                  0
+Register bits not including I/Os:   392 of 1080 (36%)
+
+RAM/ROM usage summary
+Block Rams : 3 of 4 (75%)
+
+
+@S |Mapping Summary:
+Total Luts in terms of LUT4: LUT4 + LUT5 * 2 + LUT6 * 4 + LUT7 * 8 + LUT8 * 16 + MUX2 * 1 + MUX4 * 2 + MUX8 * 3 + MUX16 * 4 + MUX32 * 5
+Total  LUTs: 818 (47%)
+

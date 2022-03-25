@@ -1,0 +1,72 @@
+@N: MF916 |Option synthesis_strategy=base is enabled. 
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+@N: FX493 |Applying initial value "01" on instance PHY_OPMODE[1:0].
+@N: FX493 |Applying initial value "0" on instance s_suspend.
+@N: FX493 |Applying initial value "1" on instance s_reset.
+@N: FX493 |Applying initial value "00000000000000000000" on instance s_timer2[19:0].
+@N: FX493 |Applying initial value "0" on instance s_txfirst.
+@N: FX493 |Applying initial value "0" on instance s_finished.
+@N: FX493 |Applying initial value "0000" on instance s_endpt[3:0].
+@N: FX493 |Applying initial value "0" on instance s_osync.
+@N: FX493 |Applying initial value "0" on instance s_in.
+@N: FX493 |Applying initial value "0" on instance s_setup.
+@N: FX493 |Applying initial value "0" on instance s_out.
+@N: FX493 |Applying initial value "0" on instance s_sendbyte[0].
+@N: FX493 |Applying initial value "0000000" on instance s_addr[6:0].
+@N: FX493 |Applying initial value "0" on instance s_confd.
+@N: FX493 |Applying initial value "00000000001" on instance s_state[0:10].
+@N: FX493 |Applying initial value "0" on instance s_halt_out[1].
+@N: FX493 |Applying initial value "00" on instance s_halt_in[1:2].
+@N: FX493 |Applying initial value "1" on instance s_txprev_acked.
+@N: FX493 |Applying initial value "0" on instance s_isync.
+@N: FX493 |Applying initial value "0000000000" on instance s_rxbuf_head[9:0].
+@N: FX493 |Applying initial value "0000000000" on instance q_rxbuf_tail[9:0].
+@N: FX493 |Applying initial value "0" on instance s_txprev_full.
+@N: FX493 |Applying initial value "0" on instance s_osync.
+@N: FX493 |Applying initial value "0000000000" on instance s_txbuf_tail[9:0].
+@N: FX493 |Applying initial value "0" on instance q_rxval.
+@N: FX493 |Applying initial value "00000000" on instance cnt_rst[7:0].
+@N: BN362 :"e:\ip_project\usb\usb2iis\test_0525\usb2iis\only_rx\src\usb_ini.vhd":372:8:372:9|Removing sequential instance s_suspend (in view: work.usb_init_false(usb_init_arch)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: FX1143 |Skipping assigning INTERNAL_VREF to iobanks, because the table of mapping from pin to iobank is not initialized.
+@N: BN225 |Writing default property annotation file E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\impl\synthesize\rev_1\only_rx.sap.
+@N: FX493 |Applying initial value "1" on instance c_status[0].
+@N: FX493 |Applying initial value "0" on instance c_status[1].
+@N: FX493 |Applying initial value "0" on instance c_status[2].
+@N: FX493 |Applying initial value "0" on instance c_status[3].
+@N: FX493 |Applying initial value "0" on instance c_status[4].
+@N: FX493 |Applying initial value "0" on instance c_status[5].
+@N: FX493 |Applying initial value "0" on instance c_status[6].
+@N: MO225 :"e:\ip_project\usb\usb2iis\test_0525\usb2iis\only_rx\src\usb_ini.vhd":97:11:97:17|There are no possible illegal states for state machine s_state[0:3] (in view: work.usb_init_false(usb_init_arch)); safe FSM implementation is not required.
+@N: FX493 |Applying initial value "1" on instance s_state[9].
+@N: FX493 |Applying initial value "0" on instance s_state[8].
+@N: FX493 |Applying initial value "0" on instance s_state[7].
+@N: FX493 |Applying initial value "0" on instance s_state[6].
+@N: FX493 |Applying initial value "0" on instance s_state[5].
+@N: FX493 |Applying initial value "0" on instance s_state[4].
+@N: FX493 |Applying initial value "0" on instance s_state[3].
+@N: FX493 |Applying initial value "0" on instance s_state[2].
+@N: FX493 |Applying initial value "0" on instance s_state[1].
+@N: FX493 |Applying initial value "0" on instance s_state[0].
+@N: FX493 |Applying initial value "1" on instance s_state[13].
+@N: FX493 |Applying initial value "0" on instance s_state[12].
+@N: FX493 |Applying initial value "0" on instance s_state[11].
+@N: FX493 |Applying initial value "0" on instance s_state[10].
+@N: FX493 |Applying initial value "0" on instance s_state[9].
+@N: FX493 |Applying initial value "0" on instance s_state[8].
+@N: FX493 |Applying initial value "0" on instance s_state[7].
+@N: FX493 |Applying initial value "0" on instance s_state[6].
+@N: FX493 |Applying initial value "0" on instance s_state[5].
+@N: FX493 |Applying initial value "0" on instance s_state[4].
+@N: FX493 |Applying initial value "0" on instance s_state[3].
+@N: FX493 |Applying initial value "0" on instance s_state[2].
+@N: FX493 |Applying initial value "0" on instance s_state[1].
+@N: FX493 |Applying initial value "0" on instance s_state[0].
+@N: FX493 |Applying initial value "1" on instance s_state[7].
+@N: FX493 |Applying initial value "0" on instance s_state[6].
+@N: FX493 |Applying initial value "0" on instance s_state[5].
+@N: FX493 |Applying initial value "0" on instance s_state[4].
+@N: FX493 |Applying initial value "0" on instance s_state[3].
+@N: FX493 |Applying initial value "0" on instance s_state[2].
+@N: FX493 |Applying initial value "0" on instance s_state[1].
+@N: FX493 |Applying initial value "0" on instance s_state[0].

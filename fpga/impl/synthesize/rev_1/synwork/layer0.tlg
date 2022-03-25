@@ -1,0 +1,54 @@
+@N: CG364 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\parameter.v":3:8:3:16|Synthesizing module work_E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\USB_TOP.v_unit in library work.
+@N: CG364 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\par2iis_ver2.v":20:7:20:13|Synthesizing module par2i2s in library work.
+@W: CG1340 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\par2iis_ver2.v":193:0:193:5|Index into variable pdata_I could be out of range ; a simulation mismatch is possible.
+@W: CG133 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\par2iis_ver2.v":134:4:134:13|Object valid_flag is declared but not assigned. Either assign a value or remove the declaration.
+Running optimization stage 1 on par2i2s .......
+@N: CG364 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v":1:7:1:16|Synthesizing module serial2iis in library work.
+@W: CG133 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v":48:24:48:38|Object rxbuf_raddr_cnt is declared but not assigned. Either assign a value or remove the declaration.
+Running optimization stage 1 on serial2iis .......
+@N: CL134 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v":242:0:242:5|Found RAM rxbuffer, depth=1024, width=8
+@N: CG364 :"C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro\lib\generic\gw1ns.v":2699:7:2699:15|Synthesizing module USB20_PHY in library work.
+Running optimization stage 1 on USB20_PHY .......
+@N: CG364 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":4:40:4:40|Synthesizing module \~usb_1p1.USB_TOP  in library work.
+
+	VENDORID=16'b0000100010111011
+	PRODUCTID=16'b0010011111000110
+	VERSIONBCD=16'b0000000100000000
+	RXBUFSIZE_BITS=32'b00000000000000000000000000001010
+	TXBUFSIZE_BITS=32'b00000000000000000000000000001010
+   Generated name = \~usb_1p1.USB_TOP _2235_10182_256_10s_10s
+@N: CG179 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":78:18:78:24|Removing redundant assignment.
+@N: CG794 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":226:8:226:21|Using module usb_serial from library work
+@W: CS263 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":264:25:264:30|Port-width mismatch for port DATAOUT. The port definition is 16 bits, but the actual port connection bit width is 8. Adjust either the definition or the instantiation of this port.
+@W: CG360 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":35:12:35:19|Removing wire SUSPENDM, as there is no assignment to it.
+@W: CG360 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":38:12:38:16|Removing wire RESET, as there is no assignment to it.
+@W: CG133 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":72:12:72:24|Object PHY_TXREADY_d is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG360 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":73:12:73:24|Removing wire PHY_TXREADY_r, as there is no assignment to it.
+Running optimization stage 1 on \~usb_1p1.USB_TOP _2235_10182_256_10s_10s .......
+@N: CG364 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\USB_TOP.v":23:23:23:23|Synthesizing module USB_TOP in library work.
+Running optimization stage 1 on USB_TOP .......
+Running optimization stage 2 on USB_TOP .......
+Running optimization stage 2 on \~usb_1p1.USB_TOP _2235_10182_256_10s_10s .......
+@W: CL156 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\TOP.v":321:21:321:23|*Input XIN to expression [instance] has undriven bits; assigning undriven bits to 0.  Simulation mismatch possible. Assign all bits of the input.
+Running optimization stage 2 on USB20_PHY .......
+Running optimization stage 2 on serial2iis .......
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v":214:0:214:5|Register bit rxbuf_raddr[8] is always 0.
+@W: CL260 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v":214:0:214:5|Pruning register bit 8 of rxbuf_raddr[9:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\serial2iis_vers.v":103:0:103:5|Trying to extract state machine for register c_status.
+Extracted state machine for register c_status
+State machine has 7 reachable states with original encodings of:
+   000
+   001
+   010
+   011
+   100
+   101
+   110
+Running optimization stage 2 on par2i2s .......
+@N: CL189 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\par2iis_ver2.v":161:0:161:5|Register bit bck_cnt[5] is always 0.
+@W: CL260 :"E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\src\par2iis_ver2.v":161:0:161:5|Pruning register bit 5 of bck_cnt[5:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+
+For a summary of runtime and memory usage per design unit, please see file:
+==========================================================
+@L: E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\impl\synthesize\rev_1\synwork\layer0.rt.csv
+
