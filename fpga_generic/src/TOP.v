@@ -3,25 +3,11 @@ module Top(
     input      wire CLK_IN,//50M
 
     output reg    LED,
+    inout   wire [1:4]I2C_SCL,
+    inout   wire [1:4]I2C_SDA,
 
-    inout   wire I2C1_SCL,
-    inout   wire I2C1_SDA,
-    inout   wire I2C2_SCL,
-    inout   wire I2C2_SDA,
-    inout   wire I2C3_SCL,
-    inout   wire I2C3_SDA,
-    inout   wire I2C4_SCL,
-    inout   wire I2C4_SDA,
-   
     output  wire [1:3]UART_TXD,
     input   wire [1:3]UART_RXD,
- 
- /* output  wire UART1_TXD,
-    input   wire UART1_RXD,
-    output  wire UART2_TXD,
-    input   wire UART2_RXD,
-    output  wire UART3_TXD,
-    input   wire UART3_RXD,*/
 
     output wire [9:0] PARALLEL_GPIO,
 
@@ -35,80 +21,40 @@ module Top(
   );
 
   reg [31:0] cnt;
-
-  wire        i2c1_scl_o;
-  wire        i2c1_sda_o;
-  wire        i2c1_scl_i;
-  wire        i2c1_sda_i;
-  wire        i2c2_scl_o;
-  wire        i2c2_sda_o;
-  wire        i2c2_scl_i;
-  wire        i2c2_sda_i;
-  wire        i2c3_scl_o;
-  wire        i2c3_sda_o;
-  wire        i2c3_scl_i;
-  wire        i2c3_sda_i;
-  wire        i2c4_scl_o;
-  wire        i2c4_sda_o;
-  wire        i2c4_scl_i;
-  wire        i2c4_sda_i;
+  wire RESET_IN;
+  wire fclk_480M;
+  wire rxpktval;
+  wire usb_busreset;
+  wire usb_highspeed;
+  wire usb_suspend;
+  wire usb_online;
+  wire usb_sof;
+  wire     [1:4] i2c_scl_o;
+  wire     [1:4] i2c_sda_o;
+  wire     [1:4] i2c_scl_i;
+  wire     [1:4] i2c_sda_i;
 
   wire [3:0] i2c_paddr;
   wire [31:0]i2c_pwdata;
   wire i2c_penable;
   wire i2c_pwrite;
   wire [3:0] i2c_psel;
-  wire [31:0]i2c1_prdata;
-  wire [31:0]i2c2_prdata;
-  wire [31:0]i2c3_prdata;
-  wire [31:0]i2c4_prdata;
 
-  wire i2c1_rd;
-  wire [7:0] i2c1_rx_data;
-  wire [8:0] i2c1_rx_len;
+  wire [31:0] i2c_prdata[1:4];
 
-  wire i2c2_rd;
-  wire [7:0] i2c2_rx_data;
-  wire [8:0] i2c2_rx_len;
 
-  wire i2c3_rd;
-  wire [7:0] i2c3_rx_data;
-  wire [8:0] i2c3_rx_len;
+  wire [1:4] i2c_rd;
+  wire [7:0] i2c_rx_data[1:4];
+  wire [8:0] i2c_rx_len[1:4];
+  wire [1:4] usb_rxrdy_i2c;
+  wire [7:0] usb_txdat_i2c[1:4];
+  wire [11:0] usb_txdat_len_i2c[1:4];
+  wire [1:4] usb_txcork_i2c;
 
-  wire i2c4_rd;
-  wire [7:0] i2c4_rx_data;
-  wire [8:0] i2c4_rx_len;
-
-  wire usb_rxrdy_i2c1;
-  wire usb_rxrdy_i2c2;
-  wire usb_rxrdy_i2c3;
-  wire usb_rxrdy_i2c4;
-  wire [7:0] usb_txdat_i2c1;
-  wire [7:0] usb_txdat_i2c2;
-  wire [7:0] usb_txdat_i2c3;
-  wire [7:0] usb_txdat_i2c4;
-  wire [11:0]usb_txdat_len_i2c1;
-  wire [11:0]usb_txdat_len_i2c2;
-  wire [11:0]usb_txdat_len_i2c3;
-  wire [11:0]usb_txdat_len_i2c4;
-  wire usb_txcork_i2c1;
-  wire usb_txcork_i2c2;
-  wire usb_txcork_i2c3;
-  wire usb_txcork_i2c4;
-
-  wire usb_rxrdy_uart1;
-  wire usb_rxrdy_uart2;
-  wire usb_rxrdy_uart3;
-
-  wire [7:0] usb_txdat_uart1;
-  wire [7:0] usb_txdat_uart2;
-  wire [7:0] usb_txdat_uart3;
-  wire [11:0]usb_txdat_len_uart1;
-  wire [11:0]usb_txdat_len_uart2;
-  wire [11:0]usb_txdat_len_uart3;
-  wire usb_txcork_uart1;
-  wire usb_txcork_uart2;
-  wire usb_txcork_uart3;
+  wire [1:3] usb_rxrdy_uart;
+  wire [7:0] usb_txdat_uart[1:3];
+  wire [11:0] usb_txdat_len_uart[1:3];
+  wire [1:3] usb_txcork_uart;
 
   wire lock_o;
 
@@ -285,7 +231,7 @@ module Top(
 
   //==============================================================
   //=====UART 
-  
+
   genvar g_uart_id;
   for (g_uart_id = 1; g_uart_id <= 3; g_uart_id = g_uart_id + 1) begin: GEN_UART 
     UART  #(
@@ -321,24 +267,24 @@ module Top(
     ,.usb_rxdat          (usb_rxdat)//
     ,.usb_rxval          (usb_rxval)//
     ,.usb_rxact          (usb_rxact  )//
-    ,.usb_rxrdy_uart1    (usb_rxrdy_uart1  )//
-    ,.usb_rxrdy_uart2    (usb_rxrdy_uart2  )//
-    ,.usb_rxrdy_uart3    (usb_rxrdy_uart3  )//
+    ,.usb_rxrdy_uart1    (usb_rxrdy_uart[1]  )//
+    ,.usb_rxrdy_uart2    (usb_rxrdy_uart[2]  )//
+    ,.usb_rxrdy_uart3    (usb_rxrdy_uart[3]  )//
     ,.rxpktval           (rxpktval)//
     ,.usb_txact          (usb_txact)//
     ,.usb_txpop          (usb_txpop)//
 
-    ,.usb_txdat_uart1    (usb_txdat_uart1)//
-    ,.usb_txdat_len_uart1(usb_txdat_len_uart1)//
-    ,.usb_txcork_uart1   (usb_txcork_uart1  )//
+    ,.usb_txdat_uart1    (usb_txdat_uart[1])//
+    ,.usb_txdat_len_uart1(usb_txdat_len_uart[1])//
+    ,.usb_txcork_uart1   (usb_txcork_uart[1]  )//
 
-    ,.usb_txdat_uart2    (usb_txdat_uart2)//
-    ,.usb_txdat_len_uart2(usb_txdat_len_uart2)//
-    ,.usb_txcork_uart2   (usb_txcork_uart2  )//
+    ,.usb_txdat_uart2    (usb_txdat_uart[2])//
+    ,.usb_txdat_len_uart2(usb_txdat_len_uart[2])//
+    ,.usb_txcork_uart2   (usb_txcork_uart[2]  )//
 
-    ,.usb_txdat_uart3    (usb_txdat_uart3)//
-    ,.usb_txdat_len_uart3(usb_txdat_len_uart3)//
-    ,.usb_txcork_uart3   (usb_txcork_uart3  )//
+    ,.usb_txdat_uart3    (usb_txdat_uart[3])//
+    ,.usb_txdat_len_uart3(usb_txdat_len_uart[3])//
+    ,.usb_txcork_uart3   (usb_txcork_uart[3]  )//
 
     ,.uart1_tx_data_o    (uart_tx_data[1]    ) //
     ,.uart1_tx_data_val_o(uart_tx_data_val[1]) // when TX_DATA_VAL = 1, data on TX_DATA will be transmit, DATA_SEND can set to 1 only when BUSY = 0
@@ -375,52 +321,52 @@ module Top(
     ,.usb_rxdat_i    (usb_rxdat)//
     ,.usb_rxval_i    (usb_rxval)//
     ,.usb_rxact_i    (usb_rxact  )//
-    ,.usb_rxrdy_i2c1_o    (usb_rxrdy_i2c1)//
-    ,.usb_rxrdy_i2c2_o    (usb_rxrdy_i2c2)//
-    ,.usb_rxrdy_i2c3_o    (usb_rxrdy_i2c3)//
-    ,.usb_rxrdy_i2c4_o    (usb_rxrdy_i2c4)//
+    ,.usb_rxrdy_i2c1_o    (usb_rxrdy_i2c[1])//
+    ,.usb_rxrdy_i2c2_o    (usb_rxrdy_i2c[2])//
+    ,.usb_rxrdy_i2c3_o    (usb_rxrdy_i2c[3])//
+    ,.usb_rxrdy_i2c4_o    (usb_rxrdy_i2c[4])//
     ,.usb_rxpktval_i (rxpktval)//
 
     ,.usb_txact_i    (usb_txact)//
     ,.usb_txpop_i    (usb_txpop)//
-    ,.usb_txdat_i2c1_o    (usb_txdat_i2c1  )//
-    ,.usb_txdat_i2c2_o    (usb_txdat_i2c2  )//
-    ,.usb_txdat_i2c3_o    (usb_txdat_i2c3  )//
-    ,.usb_txdat_i2c4_o    (usb_txdat_i2c4  )//
-    ,.usb_txdat_len_i2c1_o(usb_txdat_len_i2c1  )//
-    ,.usb_txdat_len_i2c2_o(usb_txdat_len_i2c2  )//
-    ,.usb_txdat_len_i2c3_o(usb_txdat_len_i2c3  )//
-    ,.usb_txdat_len_i2c4_o(usb_txdat_len_i2c4  )//
-    ,.usb_txcork_i2c1_o   (usb_txcork_i2c1 )//
-    ,.usb_txcork_i2c2_o   (usb_txcork_i2c2 )//
-    ,.usb_txcork_i2c3_o   (usb_txcork_i2c3 )//
-    ,.usb_txcork_i2c4_o   (usb_txcork_i2c4 )//
+    ,.usb_txdat_i2c1_o    (usb_txdat_i2c[1]  )//
+    ,.usb_txdat_i2c2_o    (usb_txdat_i2c[2]  )//
+    ,.usb_txdat_i2c3_o    (usb_txdat_i2c[3]  )//
+    ,.usb_txdat_i2c4_o    (usb_txdat_i2c[4]  )//
+    ,.usb_txdat_len_i2c1_o(usb_txdat_len_i2c[1]  )//
+    ,.usb_txdat_len_i2c2_o(usb_txdat_len_i2c[2]  )//
+    ,.usb_txdat_len_i2c3_o(usb_txdat_len_i2c[3]  )//
+    ,.usb_txdat_len_i2c4_o(usb_txdat_len_i2c[4]  )//
+    ,.usb_txcork_i2c1_o   (usb_txcork_i2c[1] )//
+    ,.usb_txcork_i2c2_o   (usb_txcork_i2c[2] )//
+    ,.usb_txcork_i2c3_o   (usb_txcork_i2c[3] )//
+    ,.usb_txcork_i2c4_o   (usb_txcork_i2c[4] )//
 
     ,.i2c_paddr        (i2c_paddr      )
     ,.i2c_pwdata       (i2c_pwdata     )
-    ,.i2c1_prdata      (i2c1_prdata     )
-    ,.i2c2_prdata      (i2c2_prdata     )
-    ,.i2c3_prdata      (i2c3_prdata     )
-    ,.i2c4_prdata      (i2c4_prdata     )
+    ,.i2c1_prdata      (i2c_prdata[1]     )
+    ,.i2c2_prdata      (i2c_prdata[2]     )
+    ,.i2c3_prdata      (i2c_prdata[3]     )
+    ,.i2c4_prdata      (i2c_prdata[4]     )
     ,.i2c_pwrite       (i2c_pwrite     )
     ,.i2c_penable      (i2c_penable    )
     ,.i2c_psel         (i2c_psel       )
 
-    ,.i2c1_rd       (i2c1_rd     )
-    ,.i2c1_rx_data  (i2c1_rx_data)
-    ,.i2c1_rx_len   (i2c1_rx_len[7:0])
+    ,.i2c1_rd       (i2c_rd[1]     )
+    ,.i2c1_rx_data  (i2c_rx_data[1])
+    ,.i2c1_rx_len   (i2c_rx_len[1][7:0])
 
-    ,.i2c2_rd       (i2c2_rd     )
-    ,.i2c2_rx_data  (i2c2_rx_data)//
-    ,.i2c2_rx_len   (i2c2_rx_len[7:0])//
+    ,.i2c2_rd       (i2c_rd[2]     )
+    ,.i2c2_rx_data  (i2c_rx_data[2])//
+    ,.i2c2_rx_len   (i2c_rx_len[2][7:0])//
 
-    ,.i2c3_rd       (i2c3_rd     )
-    ,.i2c3_rx_data  (i2c3_rx_data)//
-    ,.i2c3_rx_len   (i2c3_rx_len[7:0])//
+    ,.i2c3_rd       (i2c_rd[3]     )
+    ,.i2c3_rx_data  (i2c_rx_data[3])//
+    ,.i2c3_rx_len   (i2c_rx_len[3][7:0])//
 
-    ,.i2c4_rd       (i2c4_rd     )
-    ,.i2c4_rx_data  (i2c4_rx_data)//
-    ,.i2c4_rx_len   (i2c4_rx_len[7:0])//
+    ,.i2c4_rd       (i2c_rd[4]     )
+    ,.i2c4_rx_data  (i2c_rx_data[4])//
+    ,.i2c4_rx_len   (i2c_rx_len[4][7:0])//
 
   );
   defparam u_usb_i2c_ctrl.ENDPT_I2C1 = ENDPT_I2C1;
@@ -430,149 +376,87 @@ module Top(
 
   //==============================================================
   //======I2C
-  assign I2C1_SCL = i2c1_scl_o ? 1'bz : i2c1_scl_o;
-  assign I2C1_SDA = i2c1_sda_o ? 1'bz : i2c1_sda_o;
-  assign i2c1_scl_i = I2C1_SCL;
-  assign i2c1_sda_i = I2C1_SDA;
-  assign I2C2_SCL = i2c2_scl_o ? 1'bz : i2c2_scl_o;
-  assign I2C2_SDA = i2c2_sda_o ? 1'bz : i2c2_sda_o;
-  assign i2c2_scl_i = I2C2_SCL;
-  assign i2c2_sda_i = I2C2_SDA;
-  assign I2C3_SCL = i2c3_scl_o ? 1'bz : i2c3_scl_o;
-  assign I2C3_SDA = i2c3_sda_o ? 1'bz : i2c3_sda_o;
-  assign i2c3_scl_i = I2C3_SCL;
-  assign i2c3_sda_i = I2C3_SDA;
-  assign I2C4_SCL = i2c4_scl_o ? 1'bz : i2c4_scl_o;
-  assign I2C4_SDA = i2c4_sda_o ? 1'bz : i2c4_sda_o;
-  assign i2c4_scl_i = I2C4_SCL;
-  assign i2c4_sda_i = I2C4_SDA;
+  assign I2C_SCL[1] = i2c_scl_o[1] ? 1'bz : i2c_scl_o[1];
+  assign I2C_SDA[1] = i2c_sda_o[1] ? 1'bz : i2c_sda_o[1];
+  assign i2c_scl_i[1] = I2C_SCL[1];
+  assign i2c_sda_i[1] = I2C_SDA[1];
+  assign I2C_SCL[2] = i2c_scl_o[2] ? 1'bz : i2c_scl_o[2];
+  assign I2C_SDA[2] = i2c_sda_o[2] ? 1'bz : i2c_sda_o[2];
+  assign i2c_scl_i[2] = I2C_SCL[2];
+  assign i2c_sda_i[2] = I2C_SDA[2];
+  assign I2C_SCL[3] = i2c_scl_o[3] ? 1'bz : i2c_scl_o[3];
+  assign I2C_SDA[3] = i2c_sda_o[3] ? 1'bz : i2c_sda_o[3];
+  assign i2c_scl_i[3] = I2C_SCL[3];
+  assign i2c_sda_i[3] = I2C_SDA[3];
+  assign I2C_SCL[4] = i2c_scl_o[4] ? 1'bz : i2c_scl_o[4];
+  assign I2C_SDA[4] = i2c_sda_o[4] ? 1'bz : i2c_sda_o[4];
+  assign i2c_scl_i[4] = I2C_SCL[4];
+  assign i2c_sda_i[4] = I2C_SDA[4];
 
-
-  atciic100 u1_i2c 
-  (
-    .pclk    (PHY_CLKOUT   )
-    ,.presetn (!RESET_IN    )
-    ,.paddr   (i2c_paddr        )
-    ,.penable (i2c_penable      )
-    ,.prdata  (i2c1_prdata       )
-    ,.pwdata  (i2c_pwdata       )
-    ,.pwrite  (i2c_pwrite       )
-    ,.psel    (i2c_psel[0]      )
-    ,.iic_rd  (i2c1_rd       )
-    ,.rd_data (i2c1_rx_data  )
-    ,.entries (i2c1_rx_len  )
-    ,.dma_ack (1'b0         )
-    ,.dma_req (             )
-    ,.scl_o   (i2c1_scl_o        )
-    ,.sda_o   (i2c1_sda_o        )
-    ,.scl_i   (i2c1_scl_i        )
-    ,.sda_i   (i2c1_sda_i        )
-    ,.i2c_int (             )
-  );
-
-  atciic100 u2_i2c 
-  (
-    .pclk    (PHY_CLKOUT   )
-    ,.presetn (!RESET_IN    )
-    ,.paddr   (i2c_paddr        )
-    ,.penable (i2c_penable      )
-    ,.prdata  (i2c2_prdata       )
-    ,.pwdata  (i2c_pwdata       )
-    ,.pwrite  (i2c_pwrite       )
-    ,.psel    (i2c_psel[1]      )
-    ,.iic_rd  (i2c2_rd       )
-    ,.rd_data (i2c2_rx_data  )
-    ,.entries (i2c2_rx_len  )
-    ,.dma_ack (1'b0         )
-    ,.dma_req (             )
-    ,.scl_o   (i2c2_scl_o        )
-    ,.sda_o   (i2c2_sda_o        )
-    ,.scl_i   (i2c2_scl_i        )
-    ,.sda_i   (i2c2_sda_i        )
-    ,.i2c_int (             )
-  );
-  atciic100 u3_i2c 
-  (
-    .pclk    (PHY_CLKOUT   )
-    ,.presetn (!RESET_IN    )
-    ,.paddr   (i2c_paddr        )
-    ,.penable (i2c_penable      )
-    ,.prdata  (i2c3_prdata       )
-    ,.pwdata  (i2c_pwdata       )
-    ,.pwrite  (i2c_pwrite       )
-    ,.psel    (i2c_psel[2]      )
-    ,.iic_rd  (i2c3_rd       )
-    ,.rd_data (i2c3_rx_data  )
-    ,.entries (i2c3_rx_len  )
-    ,.dma_ack (1'b0         )
-    ,.dma_req (             )
-    ,.scl_o   (i2c3_scl_o        )
-    ,.sda_o   (i2c3_sda_o        )
-    ,.scl_i   (i2c3_scl_i        )
-    ,.sda_i   (i2c3_sda_i        )
-    ,.i2c_int (             )
-  );
-  atciic100 u4_i2c 
-  (
-    .pclk    (PHY_CLKOUT   )
-    ,.presetn (!RESET_IN    )
-    ,.paddr   (i2c_paddr        )
-    ,.penable (i2c_penable      )
-    ,.prdata  (i2c4_prdata       )
-    ,.pwdata  (i2c_pwdata       )
-    ,.pwrite  (i2c_pwrite       )
-    ,.psel    (i2c_psel[3]      )
-    ,.iic_rd  (i2c4_rd       )
-    ,.rd_data (i2c4_rx_data  )
-    ,.entries (i2c4_rx_len  )
-    ,.dma_ack (1'b0         )
-    ,.dma_req (             )
-    ,.scl_o   (i2c4_scl_o        )
-    ,.sda_o   (i2c4_sda_o        )
-    ,.scl_i   (i2c4_scl_i        )
-    ,.sda_i   (i2c4_sda_i        )
-    ,.i2c_int (             )
-  );
+  genvar g_i2c_num;
+  for(g_i2c_num = 1; g_i2c_num <= 4; g_i2c_num = g_i2c_num + 1) begin: GEN_I2C
+    atciic100 u1_i2c 
+    (
+      .pclk    (PHY_CLKOUT   )
+      ,.presetn (!RESET_IN    )
+      ,.paddr   (i2c_paddr        )
+      ,.penable (i2c_penable      )
+      ,.prdata  (i2c_prdata[g_i2c_num]       )
+      ,.pwdata  (i2c_pwdata       )
+      ,.pwrite  (i2c_pwrite       )
+      ,.psel    (i2c_psel[(u_ic-1)]      )
+      ,.iic_rd  (i2c_rd[g_i2c_num]       )
+      ,.rd_data (i2c_rx_data[g_i2c_num]  )
+      ,.entries (i2c_rx_len[g_i2c_num]  )
+      ,.dma_ack (1'b0         )
+      ,.dma_req (             )
+      ,.scl_o   (i2c_scl_o[g_i2c_num]        )
+      ,.sda_o   (i2c_sda_o[g_i2c_num]        )
+      ,.scl_i   (i2c_scl_i[g_i2c_num]        )
+      ,.sda_i   (i2c_sda_i[g_i2c_num]        )
+      ,.i2c_int (             )
+    );
+  end
 
   //==============================================================
   //======USB Controller 
 
-  assign usb_rxrdy = (endpt_sel ==ENDPT_UART1_DATA) ? usb_rxrdy_uart1:
-  (endpt_sel ==ENDPT_UART2_DATA) ? usb_rxrdy_uart2:
-  (endpt_sel ==ENDPT_UART3_DATA) ? usb_rxrdy_uart3:
-  (endpt_sel ==ENDPT_I2C1) ? usb_rxrdy_i2c1:
-  (endpt_sel ==ENDPT_I2C2) ? usb_rxrdy_i2c2:
-  (endpt_sel ==ENDPT_I2C3) ? usb_rxrdy_i2c3:
-  (endpt_sel ==ENDPT_I2C4) ? usb_rxrdy_i2c4:
+  assign usb_rxrdy = (endpt_sel ==ENDPT_UART1_DATA) ? usb_rxrdy_uart[1]:
+  (endpt_sel ==ENDPT_UART2_DATA) ? usb_rxrdy_uart[2]:
+  (endpt_sel ==ENDPT_UART3_DATA) ? usb_rxrdy_uart[3]:
+  (endpt_sel ==ENDPT_I2C1) ? usb_rxrdy_i2c[1]:
+  (endpt_sel ==ENDPT_I2C2) ? usb_rxrdy_i2c[2]:
+  (endpt_sel ==ENDPT_I2C3) ? usb_rxrdy_i2c[3]:
+  (endpt_sel ==ENDPT_I2C4) ? usb_rxrdy_i2c[4]:
   (endpt_sel ==ENDPT_PARALLEL)   ? usb_rxrdy_gpio :1'b0;
 
 
   assign usb_txcork =(endpt_sel ==ENDPT_UART_CONFIG) ? ~endpt0_send    :
-  (endpt_sel ==ENDPT_UART1_DATA)  ? usb_txcork_uart1:
-  (endpt_sel ==ENDPT_UART2_DATA)  ? usb_txcork_uart2:
-  (endpt_sel ==ENDPT_UART3_DATA)  ? usb_txcork_uart3: 
-  (endpt_sel ==ENDPT_I2C1) ? usb_txcork_i2c1:
-  (endpt_sel ==ENDPT_I2C2) ? usb_txcork_i2c2:
-  (endpt_sel ==ENDPT_I2C3) ? usb_txcork_i2c3:
-  (endpt_sel ==ENDPT_I2C4) ? usb_txcork_i2c4:1'b1;
+  (endpt_sel ==ENDPT_UART1_DATA)  ? usb_txcork_uart[1]:
+  (endpt_sel ==ENDPT_UART2_DATA)  ? usb_txcork_uart[2]:
+  (endpt_sel ==ENDPT_UART3_DATA)  ? usb_txcork_uart[3]: 
+  (endpt_sel ==ENDPT_I2C1) ? usb_txcork_i2c[1]:
+  (endpt_sel ==ENDPT_I2C2) ? usb_txcork_i2c[2]:
+  (endpt_sel ==ENDPT_I2C3) ? usb_txcork_i2c[3]:
+  (endpt_sel ==ENDPT_I2C4) ? usb_txcork_i2c[4]:1'b1;
 
   assign usb_txdat = (endpt_sel==ENDPT_UART_CONFIG) ? endpt0_dat :
-  (endpt_sel ==ENDPT_UART1_DATA)  ? usb_txdat_uart1:
-  (endpt_sel ==ENDPT_UART2_DATA)  ? usb_txdat_uart2:
-  (endpt_sel ==ENDPT_UART3_DATA)  ? usb_txdat_uart3: 
-  (endpt_sel ==ENDPT_I2C1) ? usb_txdat_i2c1:
-  (endpt_sel ==ENDPT_I2C2) ? usb_txdat_i2c2:
-  (endpt_sel ==ENDPT_I2C3) ? usb_txdat_i2c3:
-  (endpt_sel ==ENDPT_I2C4) ? usb_txdat_i2c4:8'd0;
+  (endpt_sel ==ENDPT_UART1_DATA)  ? usb_txdat_uart[1]:
+  (endpt_sel ==ENDPT_UART2_DATA)  ? usb_txdat_uart[2]:
+  (endpt_sel ==ENDPT_UART3_DATA)  ? usb_txdat_uart[3]: 
+  (endpt_sel ==ENDPT_I2C1) ? usb_txdat_i2c[1]:
+  (endpt_sel ==ENDPT_I2C2) ? usb_txdat_i2c[2]:
+  (endpt_sel ==ENDPT_I2C3) ? usb_txdat_i2c[3]:
+  (endpt_sel ==ENDPT_I2C4) ? usb_txdat_i2c[4]:8'd0;
 
   assign txdat_len = (endpt_sel ==ENDPT_UART_CONFIG) ? txdat_len_uart_config:
-  (endpt_sel ==ENDPT_UART1_DATA)  ? usb_txdat_len_uart1:
-  (endpt_sel ==ENDPT_UART2_DATA)  ? usb_txdat_len_uart2:
-  (endpt_sel ==ENDPT_UART3_DATA)  ? usb_txdat_len_uart3:
-  (endpt_sel ==ENDPT_I2C1) ? usb_txdat_len_i2c1:
-  (endpt_sel ==ENDPT_I2C2) ? usb_txdat_len_i2c2:
-  (endpt_sel ==ENDPT_I2C3) ? usb_txdat_len_i2c3:
-  (endpt_sel ==ENDPT_I2C4) ? usb_txdat_len_i2c4:12'h0;
+  (endpt_sel ==ENDPT_UART1_DATA)  ? usb_txdat_len_uart[1]:
+  (endpt_sel ==ENDPT_UART2_DATA)  ? usb_txdat_len_uart[2]:
+  (endpt_sel ==ENDPT_UART3_DATA)  ? usb_txdat_len_uart[3]:
+  (endpt_sel ==ENDPT_I2C1) ? usb_txdat_len_i2c[1]:
+  (endpt_sel ==ENDPT_I2C2) ? usb_txdat_len_i2c[2]:
+  (endpt_sel ==ENDPT_I2C3) ? usb_txdat_len_i2c[3]:
+  (endpt_sel ==ENDPT_I2C4) ? usb_txdat_len_i2c[4]:12'h0;
 
 
 
