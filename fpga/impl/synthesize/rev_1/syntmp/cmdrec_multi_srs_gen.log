@@ -1,7 +1,0 @@
-C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro\bin64\syn_nfilter.exe  -link  -top  USB_TOP  -multisrs  E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\impl\synthesize\rev_1\synwork\only_rx_comp.srs  -osyn  E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\impl\synthesize\rev_1\synwork\only_rx_mult.srs  -log  E:\IP_PROJECT\USB\USB2IIS\test_0525\usb2iis\only_rx\impl\synthesize\rev_1\synlog\only_rx_multi_srs_gen.srr 
-relcom:C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro\bin64\syn_nfilter.exe -link -top USB_TOP -multisrs ..\synwork\only_rx_comp.srs -osyn ..\synwork\only_rx_mult.srs -log ..\synlog\only_rx_multi_srs_gen.srr
-rc:0 success:1 runtime:0
-file:..\synwork\only_rx_comp.srs|io:i|time:1591772218|size:64172|exec:0|csum:2ECF1DA1289B6654CF2521EBEA0252AC
-file:..\synwork\only_rx_mult.srs|io:o|time:1591772220|size:3014|exec:0|csum:
-file:..\synlog\only_rx_multi_srs_gen.srr|io:o|time:1591772220|size:1197|exec:0|csum:
-file:C:\Gowin\1.9.5\19502_40903\Gowin\Gowin_V1.9.5.02Beta\SynplifyPro\bin64\syn_nfilter.exe|io:i|time:1589223566|size:8875008|exec:1|csum:CB377A51AC326E9B678CA2CFE4C984B2

@@ -1,2 +1,0 @@
-@E::Top level Module/Entity work.\~usb_1p1.USB_TOP, cannot be found in the design.
-

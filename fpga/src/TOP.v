@@ -20,7 +20,7 @@ module Top(
     output  wire UART3_TXD,
     input   wire UART3_RXD,
 
-    output [9:0]    wire PARALLEL_GPIO,
+    output wire [9:0]    PARALLEL_GPIO,
 
     inout   wire usb_dxp_io,
     inout   wire usb_dxn_io,

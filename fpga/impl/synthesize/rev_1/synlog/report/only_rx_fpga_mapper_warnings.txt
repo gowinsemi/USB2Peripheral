@@ -1,3 +1,0 @@
-@W: BN132 :"e:\ip_project\usb\usb2iis\test_0525\usb2iis\only_rx\src\top.v":154:0:154:5|Removing sequential instance u_usb_1p1.XCVRSEL because it is equivalent to instance u_usb_1p1.TERMSEL. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: MO129 :"e:\ip_project\usb\usb2iis\test_0525\usb2iis\only_rx\src\usb_packet.vhd":120:11:120:17|Sequential instance u_usb_1p1.u_usb_for_uart.usb_packet_inst.s_state[8] is reduced to a combinational gate by constant propagation.
-@W: MT420 |Found inferred clock _~usb_1p1_USB_TOP__2235_10182_256_10s_10s|PHY_CLKOUT_inferred_clock with period 16.68ns. Please declare a user-defined clock on net u_usb_1p1.PHY_CLKOUT.

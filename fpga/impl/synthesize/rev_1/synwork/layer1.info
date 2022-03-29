@@ -1,1 +1,0 @@
-|usb_serial|parameter VENDORID "0000100010111011";,parameter PRODUCTID "0010011111000110";,parameter VERSIONBCD "0000000100000000";,parameter HSSUPPORT false;,parameter SELFPOWERED false;,parameter RXBUFSIZE_BITS 10;,parameter TXBUFSIZE_BITS 10;|
