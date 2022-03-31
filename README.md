@@ -19,7 +19,9 @@ The USB2Peripheral reference design enables GOWIN FPGAs to bridge between USB 2.
 5. Up to 10 General Purpose IOs
 6. Windows, Linux and MacOS VCP (Virtual COM Port) Drivers Compatibility
 7. WinUSB and LibUSB Drivers for control of I2C and GPIO
-
+  
+![Demo_Setup_Diagram](doc/block_diagram.jpg)
+  
 ## Top Level Port List
 
 | Port            | Direction | Pin Number | Description |
