@@ -26,6 +26,5 @@
         <File path="src/uart/uart_rx.vhd" type="file.vhdl" enable="1"/>
         <File path="src/uart/uart_tx.vhd" type="file.vhdl" enable="1"/>
         <File path="src/usb2uart.cst" type="file.cst" enable="1"/>
-        <File path="src/usb2uart.sdc" type="file.sdc" enable="1"/>
     </FileList>
 </Project>
