@@ -1,11 +1,5 @@
 # USB2Peripheral
-###  ⚠<span style="color:blue">*We are in the process of updating this design to support multiple peripheral types on each port based on a top level parameter as well as documentation, demonstration platform and test setup.  
-
-
-#### <span style="color:blue">There are currently two design folders as a result.   eventually there will only be one design based on 'fpga_generic' once it is complete.
-
-#### 1. <span style="color:blue">'fpga' -- completed fixed peripheral design supporting 5 I2C ports, 4 UART Ports and 10 GPIOs
-#### 2. <span style="color:blue">'fpga_generic' - updated version of 'fpga' where 10 ports can be uniquely configured for I2C, UART, SPI, JTAG, GPIO, and potentially I3C.
+###  ⚠<span style="color:blue">*We are in the process of updating this design to support multiple peripheral types on each port based on a top level parameter as well as documentation, demonstration platform and test setup.  The current design has parameterization for up to 3 UART ports, up to 4 I2C ports and up to 10 GPIO pins.  Future updates to design will support more flexibility in number of ports and addition of I2C, UART, SPI, JTAG, GPIO, and potentially I3C.
 
 
 ## Introduction
