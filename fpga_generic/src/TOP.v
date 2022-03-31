@@ -135,6 +135,9 @@ module Top(
   parameter ENDPT_I2C4        =4'h4;
   parameter ENDPT_PARALLEL    =4'h8;
 
+  parameter NUM_UART_PER    = 3; // MAX 3 supported
+  parameter NUM_I2C_PER    = 4; // MAX 4 supported
+
   //==============================================================
   //======RST
 
@@ -233,7 +236,7 @@ module Top(
   //=====UART 
 
   genvar g_uart_id;
-  for (g_uart_id = 1; g_uart_id <= 3; g_uart_id = g_uart_id + 1) begin: GEN_UART 
+  for (g_uart_id = 1; g_uart_id <= NUM_UART_PER; g_uart_id = g_uart_id + 1) begin: GEN_UART 
     UART  #(
       .CLK_FREQ     (60000000)  // set system clock frequency in Hz
       //.BAUD_RATE    (115200  )  // baud rate value
@@ -394,7 +397,7 @@ module Top(
   assign i2c_sda_i[4] = I2C_SDA[4];
 
   genvar g_i2c_num;
-  for(g_i2c_num = 1; g_i2c_num <= 4; g_i2c_num = g_i2c_num + 1) begin: GEN_I2C
+  for(g_i2c_num = 1; g_i2c_num <= NUM_I2C_PER; g_i2c_num = g_i2c_num + 1) begin: GEN_I2C
     atciic100 u1_i2c 
     (
       .pclk    (PHY_CLKOUT   )
