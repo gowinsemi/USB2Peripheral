@@ -1,0 +1,98 @@
+# depslib dependency file v1.0
+1638942772 source:c:\users\liukai\desktop\gwusb2xx_mulit_channels\src\gw_usb2parallel.c
+	<stdio.h>
+	<stdlib.h>
+	"gw_usb2parallel.h"
+
+1639623147 c:\users\liukai\desktop\gwusb2xx_mulit_channels\include\gw_usb2parallel.h
+	"libusb.h"
+	"channels.h"
+
+1607673600 c:\users\liukai\desktop\gwusb2xx_mulit_channels\include\libusb.h
+	<basetsd.h>
+	<limits.h>
+	<stdint.h>
+	<sys/types.h>
+	<sys/time.h>
+	<time.h>
+	<windows.h>
+	<winsock.h>
+
+1639634035 c:\users\liukai\desktop\gwusb2xx_mulit_channels\include\channels.h
+
+1639635151 source:c:\users\liukai\desktop\gwusb2xx_mulit_channels\src\gw_usb2uart.c
+	<stdio.h>
+	<stdlib.h>
+	"gw_usb2uart.h"
+
+1639634762 c:\users\liukai\desktop\gwusb2xx_mulit_channels\include\gw_usb2uart.h
+	"libusb.h"
+	"define.h"
+	"channels.h"
+
+1639635717 c:\users\liukai\desktop\gwusb2xx_mulit_channels\include\define.h
+
+1639634710 source:c:\users\liukai\desktop\gwusb2xx_mulit_channels\src\gwusb_demo.c
+	<stdio.h>
+	<stdlib.h>
+	<errno.h>
+	"libusb.h"
+	"gw_usb2uart.h"
+	"gw_usb2iic.h"
+	"gw_usb2parallel.h"
+	"define.h"
+
+1639531953 c:\users\liukai\desktop\gwusb2xx_mulit_channels\include\gw_usb2iic.h
+	"libusb.h"
+	"channels.h"
+
+1639635576 source:c:\users\root\desktop\gwusb2xx_mulit_channels\src\gw_usb2parallel.c
+	<stdio.h>
+	<stdlib.h>
+	"gw_usb2parallel.h"
+
+1639635462 c:\users\root\desktop\gwusb2xx_mulit_channels\include\gw_usb2parallel.h
+	"libusb.h"
+	"channels.h"
+
+1607673600 c:\users\root\desktop\gwusb2xx_mulit_channels\include\libusb.h
+	<basetsd.h>
+	<limits.h>
+	<stdint.h>
+	<sys/types.h>
+	<sys/time.h>
+	<time.h>
+	<windows.h>
+	<winsock.h>
+
+1639635990 c:\users\root\desktop\gwusb2xx_mulit_channels\include\channels.h
+
+1639636909 source:c:\users\root\desktop\gwusb2xx_mulit_channels\src\gwusb_demo.c
+	<stdio.h>
+	<stdlib.h>
+	<errno.h>
+	"libusb.h"
+	"gw_usb2uart.h"
+	"gw_usb2iic.h"
+	"gw_usb2parallel.h"
+	"gwusb_demo.h"
+
+1639637923 c:\users\root\desktop\gwusb2xx_mulit_channels\include\gw_usb2uart.h
+	"libusb.h"
+	"define.h"
+	"channels.h"
+
+1639638070 c:\users\root\desktop\gwusb2xx_mulit_channels\include\define.h
+
+1639531954 c:\users\root\desktop\gwusb2xx_mulit_channels\include\gw_usb2iic.h
+	"libusb.h"
+	"channels.h"
+
+1639637414 c:\users\root\desktop\gwusb2xx_mulit_channels\include\gwusb_demo.h
+	"define.h"
+
+1639635152 source:c:\users\root\desktop\gwusb2xx_mulit_channels\src\gw_usb2uart.c
+	<stdio.h>
+	<stdlib.h>
+	"gw_usb2uart.h"
+

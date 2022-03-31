@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="gwusb2xx_multi_channels" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="../bin/Release/gwusb2xx_multi_channels" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="../libusb/libusb-1.0.so" />
+					<Add library="../gwusb/libgwusb2xx_multi_channels.so" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../include/channels.h" />
+		<Unit filename="../include/define.h" />
+		<Unit filename="../include/gw_usb2iic.h" />
+		<Unit filename="../include/gw_usb2parallel.h" />
+		<Unit filename="../include/gw_usb2uart.h" />
+		<Unit filename="../include/gwusb_demo.h" />
+		<Unit filename="../include/libusb.h" />
+		<Unit filename="../src/gw_usb2parallel.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/gw_usb2uart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/gwusb_demo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

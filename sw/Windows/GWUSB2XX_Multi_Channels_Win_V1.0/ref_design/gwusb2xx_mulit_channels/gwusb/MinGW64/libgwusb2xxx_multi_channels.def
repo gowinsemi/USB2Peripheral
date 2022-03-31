@@ -1,0 +1,9 @@
+EXPORTS
+    iic_get_config @1
+    iic_set_config @2
+    print_iic_config @3
+    usb2iic_master_read @4
+    usb2iic_master_write @5
+    usb2iic_reset @6
+    usb2iic_slave_read @7
+    usb2iic_slave_write @8
