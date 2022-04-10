@@ -111,7 +111,7 @@ winusb.sys or libusb.sys drivers must be installed for the GOWIN DK-USB2.0 Devel
 ### UART Demonstration Setup:  GOWIN DK-USB2.0 + 3rd party UART to USB Adapter
 The below image shows a method for testing the UART interfaces of the USB to Peripheral Reference Design. The PC is connected to J29 on DVK board, the third pins of J17 (RXD) and J18 (TXD) are the data signal of UART1, which are connected to the PC through a third party USB2UART tool. Data Read/Write transmission can be Observed through the GW Multi-Protocol-USB-Bridge test program and a PC Serial Port Debugging Tool (With installed SW Driver).
 
-![Demo_Setup_Diagram](doc/UART_Test_Setup.PNG)
+![Demo_Setup_Diagram](doc/UART_Test_Setup.jpg)
 
 ### UART Demonstration Setup:  GOWIN DK-USB2.0 + 3rd party GPIP to USB Adapter
 [To Do]
