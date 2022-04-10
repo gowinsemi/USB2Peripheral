@@ -8,6 +8,8 @@ module Top
 (
     input   wire                   CLK_IN , //50Mhz input clock
 
+    output reg    LED,
+
     inout   wire [1:num_i2c_ports] I2C_SCL, //I2C master ports
     inout   wire [1:num_i2c_ports] I2C_SDA,
 
@@ -152,6 +154,27 @@ module Top
       rst_cnt <= rst_cnt + 8'd1;
     end
   end
+
+  //======LED
+  reg [31:0] cnt;
+  always@(posedge PHY_CLKOUT) begin
+      if (RESET_IN) begin
+	  LED <= 1'b0;
+	  cnt <= 32'd0;
+      end
+      else begin
+	  if (cnt >= 32'd60000000) begin
+	      cnt <= 32'd0;
+	  end
+	  else begin
+	      cnt <= cnt + 32'd1;
+	  end
+	  if (cnt == 12'd30000000) begin
+	      LED <= ~LED;
+	  end
+      end
+  end
+  //==============================================================
 
   //==============================================================
   //==============================================================
